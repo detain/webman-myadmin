@@ -1,5 +1,5 @@
 {
-  "name": "workerman/webman",
+  "name": "detain/webman",
   "type": "project",
   "keywords": [
     "high performance",
@@ -10,18 +10,18 @@
   "description": "High performance HTTP Service Framework.",
   "authors": [
     {
-      "name": "walkor",
-      "email": "walkor@workerman.net",
+      "name": "detain",
+      "email": "detain@interserver.net",
       "homepage": "https://www.workerman.net",
       "role": "Developer"
     }
   ],
   "support": {
-    "email": "walkor@workerman.net",
-    "issues": "https://github.com/walkor/webman/issues",
+    "email": "support@interserver.net",
+    "issues": "https://github.com/detain/webman/issues",
     "forum": "https://wenda.workerman.net/",
     "wiki": "https://workerman.net/doc/webman",
-    "source": "https://github.com/walkor/webman"
+    "source": "https://github.com/detain/webman"
   },
   "require": {
     "php": ">=7.2",

@@ -757,7 +757,7 @@
             "format" : "int64"
           }
         },
-        "description" : "A"
+        "description" : "An invoice record"
       },
       "Schema" : {
         "description" : "An invoice record"

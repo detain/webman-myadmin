@@ -748,6 +748,19 @@
           }
         },
         "description" : "Listing of invoices"
+      },
+      "Invoice" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        },
+        "description" : "A"
+      },
+      "Schema" : {
+        "description" : "An invoice record"
       }
     },
     "requestBodies" : { },

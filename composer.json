@@ -32,7 +32,8 @@
     "illuminate/pagination": "*",
     "symfony/var-dumper": "*",
     "webman/cors": "*",
-    "webman/console": "*"
+    "webman/console": "*",
+    "respect/validation": "*"
   },
   "suggest": {
     "ext-event": "For better performance. "

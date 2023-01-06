@@ -59,6 +59,66 @@
     "description" : "Webhosting related services"
   } ],
   "paths" : {
+    "/invoices" : {
+      "get" : {
+        "summary" : "get a listing of invoices",
+        "operationId" : "getInvoices",
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "object",
+                    "properties" : {
+                      "id" : {
+                        "type" : "integer",
+                        "example" : 1234
+                      },
+                      "status" : {
+                        "type" : "string",
+                        "example" : "active"
+                      },
+                      "username" : {
+                        "type" : "string",
+                        "example" : "mb1234"
+                      },
+                      "password" : {
+                        "type" : "string",
+                        "example" : "guest123"
+                      },
+                      "comment" : {
+                        "type" : "string",
+                        "example" : "main mail account"
+                      }
+                    },
+                    "required" : [ "id", "status", "username" ]
+                  }
+                }
+              }
+            },
+            "links" : {
+              "sendMailByIdLink" : {
+                "operationId" : "sendMail",
+                "parameters" : {
+                  "id" : "$response.body#/0/id"
+                },
+                "description" : "The `id` value returned in the response can be used as the `id` parameter in `GET /mail/advsend`."
+              }
+            }
+          },
+          "401" : {
+            "$ref" : "#/components/responses/Unauthorized"
+          },
+          "404" : {
+            "$ref" : "#/components/responses/Unauthorized"
+          }
+        },
+        "tags" : [ "billing" ]
+      }
+    },
     "/mail" : {
       "get" : {
         "summary" : "displays a list of mail service orders",
@@ -678,6 +738,16 @@
         },
         "description" : "Details for an Email",
         "required" : [ "from", "to", "subject", "body" ]
+      },
+      "Invoices" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        },
+        "description" : "Listing of invoices"
       }
     },
     "requestBodies" : { },

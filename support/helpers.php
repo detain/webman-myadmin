@@ -142,6 +142,28 @@ function json($data, int $options = JSON_UNESCAPED_UNICODE): Response
 }
 
 /**
+* returns a json response
+*
+* @param array $body array of data to pass
+* @param int $status status code
+* @return \support\Response
+*/
+function jsonResponse($body, $status = 200) : Response {
+    return new Response($status, ['Content-Type' => 'application/json'], \json_encode($body, JSON_UNESCAPED_UNICODE));
+}
+
+/**
+* returns a json error response
+*
+* @param string $message the error details
+* @param int $status the error code
+* @return \support\Response
+*/
+function jsonErrorResponse($message, $status = 200) : Response {
+    return jsonResponse(['code' => $status, 'message' => $message], $status);
+}
+
+/**
  * Xml response
  * @param $xml
  * @return Response

@@ -22,6 +22,24 @@ Route::options('/ping', function($request) {
 });
 Route::get('/invoices', [app\controller\InvoicesController::class, 'index']);
 Route::get('/invoices/{id:\d+}', [app\controller\InvoicesController::class, 'get']);
+Route::get('/domains', [app\controller\DomainsController::class, 'index']);
+//Route::get('/domains/{id:\d+}', [app\controller\DomainsController::class, 'get']);
+Route::get('/vps', [app\controller\VpsController::class, 'index']);
+//Route::get('/vps/{id:\d+}', [app\controller\VpsController::class, 'get']);
+Route::get('/backups', [app\controller\BackupsController::class, 'index']);
+//Route::get('/backups/{id:\d+}', [app\controller\BackupsController::class, 'get']);
+Route::get('/mail', [app\controller\MailController::class, 'index']);
+//Route::get('/mail/{id:\d+}', [app\controller\MailController::class, 'get']);
+Route::get('/licenses', [app\controller\LicensesController::class, 'index']);
+//Route::get('/licenses/{id:\d+}', [app\controller\LicensesController::class, 'get']);
+Route::get('/ssl', [app\controller\SslController::class, 'index']);
+//Route::get('/ssl/{id:\d+}', [app\controller\SslController::class, 'get']);
+Route::get('/webhosting', [app\controller\WebhostingController::class, 'index']);
+//Route::get('/webhosting/{id:\d+}', [app\controller\WebhostingController::class, 'get']);
+Route::get('/quickservers', [app\controller\QuickserversController::class, 'index']);
+//Route::get('/quickservers/{id:\d+}', [app\controller\QuickserversController::class, 'get']);
+Route::get('/servers', [app\controller\ServersController::class, 'index']);
+//Route::get('/servers/{id:\d+}', [app\controller\ServersController::class, 'get']);
 /*Route::group('/mail', function() {
     Route::any('', [app\controller\Mail::class, 'index']);
     Route::any('/send', [app\controller\Mail::class, 'send']);

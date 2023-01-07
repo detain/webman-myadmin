@@ -17,13 +17,13 @@ class InvoicesController
         $startDate = $request->get('startDate', null);
         $endDate = $request->get('endDate', null);
         if (!v::anyOf(v::dateTime('Y-m-d H:i:s'), v::nullType())->validate($startDate))
-            return jsonErrorResponse('The specified startDate value '.var_export($startDate,true).' was invalid.', 400);
+            return jsonErrorResponse('The specified startDate value is invalid.', 400);
         if (!v::anyOf(v::dateTime('Y-m-d H:i:s'), v::nullType())->validate($endDate))
-            return jsonErrorResponse('The specified endDate value '.var_export($endDate,true).' was invalid.', 400);
+            return jsonErrorResponse('The specified endDate value is invalid.', 400);
         if (!v::intVal()->validate($skip))
-            return jsonErrorResponse('The specified skip value was invalid.', 400);
+            return jsonErrorResponse('The specified skip value is invalid.', 400);
         if (!v::intVal()->positive()->max(10000)->validate($limit))
-            return jsonErrorResponse('The specified limit value was invalid.', 400);
+            return jsonErrorResponse('The specified limit value is invalid.', 400);
         $where = [];
         $where[] = ['invoices_custid', '=', $accountInfo->account_id];
         $where[] = ['invoices_deleted', '=', 0];
@@ -54,7 +54,7 @@ class InvoicesController
     {
         $accountInfo = $request->accountInfo;
         if (!v::intVal()->validate($id))
-            return jsonErrorResponse('The specified id was invalid.', 400);
+            return jsonErrorResponse('The specified id is invalid.', 400);
         $return = Db::table('invoices')
             ->where('invoices_custid', '=', $accountInfo->account_id)
             ->where('invoices_id', '=', $id)

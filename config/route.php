@@ -20,7 +20,8 @@ Route::get('/ping', function($request) {
 Route::options('/ping', function($request) {
     return response('Server is up and running', 200);
 });
-
+Route::get('/invoices', [app\controller\InvoicesController::class, 'index']);
+Route::get('/invoices/{id:\d+}', [app\controller\InvoicesController::class, 'get']);
 /*Route::group('/mail', function() {
     Route::any('', [app\controller\Mail::class, 'index']);
     Route::any('/send', [app\controller\Mail::class, 'send']);
@@ -34,6 +35,6 @@ Route::options('/ping', function($request) {
 /*Route::options('[{path:.+}]', function (){
     return response('');
 });*/
-//Route::disableDefaultRoute();
+Route::disableDefaultRoute();
 
 

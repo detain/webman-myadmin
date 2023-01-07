@@ -3,7 +3,6 @@
 namespace app\controller;
 
 use support\Request;
-use support\Response;
 use support\Db;
 use Respect\Validation\Validator as v;
 
@@ -43,7 +42,7 @@ class InvoicesController
         ];
         $invoices = Db::table('invoices')
             ->where($where)
-            ->select('invoices_id', 'invoices_description', 'invoices_amount', 'invoices_type', 'invoices_date', 'invoices_extra', 'invoices_paid', 'invoices_module', 'invoices_due_date', 'invoices_service', 'invoices_currency')
+            ->select('invoices_id as id', 'invoices_description as description', 'invoices_amount as amount', 'invoices_type as type', 'invoices_date as date', 'invoices_extra as extra', 'invoices_paid as paid', 'invoices_module as module', 'invoices_due_date as due_date', 'invoices_service as service', 'invoices_currency as currency')
             ->offset($skip)
             ->limit($limit)
             ->get();
@@ -51,4 +50,16 @@ class InvoicesController
         return json($return);
     }
 
+    public function get(Request $request, $id)
+    {
+        $accountInfo = $request->accountInfo;
+        if (!v::intVal()->validate($id))
+            return jsonErrorResponse('The specified id was invalid.', 400);
+        $return = Db::table('invoices')
+            ->where('invoices_custid', '=', $accountInfo->account_id)
+            ->where('invoices_id', '=', $id)
+            ->select('invoices_id as id', 'invoices_description as description', 'invoices_amount as amount', 'invoices_type as type', 'invoices_date as date', 'invoices_extra as extra', 'invoices_paid as paid', 'invoices_module as module', 'invoices_due_date as due_date', 'invoices_service as service', 'invoices_currency as currency')
+            ->first();
+        return json($return);
+    }
 }

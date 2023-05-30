@@ -25,11 +25,8 @@
     }
   },
   "tags" : [ {
-    "name" : "clients",
-    "description" : "Commands available for client use"
-  }, {
-    "name" : "admins",
-    "description" : "Secured Admin-only calls"
+    "name" : "account",
+    "description" : "Account related items"
   }, {
     "name" : "billing",
     "description" : "Billing related items"

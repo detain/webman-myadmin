@@ -180,7 +180,8 @@
           "404" : {
             "$ref" : "#/components/responses/Unauthorized"
           }
-        }
+        },
+        "parameters" : [ ]
       }
     },
     "/old/mail/send" : {
@@ -223,7 +224,8 @@
           "404" : {
             "$ref" : "#/components/responses/NotFound"
           }
-        }
+        },
+        "parameters" : [ ]
       }
     },
     "/old/mail/advsend" : {
@@ -266,7 +268,8 @@
           "404" : {
             "$ref" : "#/components/responses/NotFound"
           }
-        }
+        },
+        "parameters" : [ ]
       }
     },
     "/old/mail/log" : {
@@ -428,7 +431,15 @@
       "post" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -439,7 +450,15 @@
       "delete" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -602,7 +621,15 @@
       "get" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -613,7 +640,15 @@
       "post" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -685,11 +720,27 @@
         }
       }
     },
-    "/dns/{domainId:\\d+}/{recordId}" : {
+    "/dns/{domainId}/{recordId}" : {
       "post" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "domainId",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The domain ID number."
+        }, {
+          "name" : "recordId",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The domain record ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -700,7 +751,23 @@
       "delete" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "domainId",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The domain ID number."
+        }, {
+          "name" : "recordId",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The domain record ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -713,7 +780,15 @@
       "get" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -724,7 +799,15 @@
       "delete" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -774,7 +857,15 @@
       "get" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -785,7 +876,15 @@
       "post" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -835,7 +934,15 @@
       "get" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -846,7 +953,15 @@
       "post" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -909,7 +1024,15 @@
       "get" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -920,7 +1043,15 @@
       "post" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -994,7 +1125,15 @@
       "get" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1005,7 +1144,15 @@
       "post" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1055,7 +1202,15 @@
       "get" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1066,7 +1221,15 @@
       "post" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1116,7 +1279,15 @@
       "get" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1127,7 +1298,15 @@
       "post" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1190,7 +1369,15 @@
       "get" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1201,7 +1388,15 @@
       "post" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1251,7 +1446,15 @@
       "get" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1262,7 +1465,15 @@
       "post" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1312,7 +1523,15 @@
       "get" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1323,7 +1542,15 @@
       "post" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1332,11 +1559,19 @@
         }
       }
     },
-    "/vps/{id:\\d+}/restart" : {
+    "/vps/{id}/restart" : {
       "get" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1345,11 +1580,19 @@
         }
       }
     },
-    "/vps/{id:\\d+}/start" : {
+    "/vps/{id}/start" : {
       "get" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1358,11 +1601,19 @@
         }
       }
     },
-    "/vps/{id:\\d+}/stop" : {
+    "/vps/{id}/stop" : {
       "get" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1412,7 +1663,15 @@
       "get" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1423,7 +1682,15 @@
       "post" : {
         "summary" : "",
         "description" : "",
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1514,12 +1781,12 @@
           },
           "messageId" : {
             "type" : "string",
-            "example" : "<vmiLEebsuCbSpUxD7oN3REpaN4VbN6BrdCAbNKIrdAo@relay0.mailbaby.net>",
+            "example" : null,
             "description" : "message id"
           },
           "created" : {
             "type" : "string",
-            "example" : "2021-10-14 08:50:10",
+            "example" : "2021-10-14T08:50:10.000Z",
             "description" : "creation date"
           },
           "time" : {

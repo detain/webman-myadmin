@@ -351,6 +351,69 @@
         "parameters" : [ ]
       }
     },
+    "/login" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ ],
+        "operationId" : "",
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        }
+      },
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ ],
+        "operationId" : "",
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        }
+      }
+    },
+    "/signup" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ ],
+        "operationId" : "",
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        }
+      }
+    },
+    "/captcha" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ ],
+        "operationId" : "",
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        }
+      }
+    },
+    "/home" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ ],
+        "operationId" : "",
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        }
+      }
+    },
     "/account" : {
       "get" : {
         "summary" : "",
@@ -580,83 +643,6 @@
         }
       }
     },
-    "/backups" : {
-      "get" : {
-        "summary" : "",
-        "description" : "",
-        "parameters" : [ ],
-        "operationId" : "",
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        }
-      }
-    },
-    "/backups/order" : {
-      "get" : {
-        "summary" : "",
-        "description" : "",
-        "parameters" : [ ],
-        "operationId" : "",
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        }
-      },
-      "post" : {
-        "summary" : "",
-        "description" : "",
-        "parameters" : [ ],
-        "operationId" : "",
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        }
-      }
-    },
-    "/backups/{id}" : {
-      "get" : {
-        "summary" : "",
-        "description" : "",
-        "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "type" : "string"
-          },
-          "description" : "The order ID number."
-        } ],
-        "operationId" : "",
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        }
-      },
-      "post" : {
-        "summary" : "",
-        "description" : "",
-        "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "type" : "string"
-          },
-          "description" : "The order ID number."
-        } ],
-        "operationId" : "",
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        }
-      }
-    },
     "/billing/cart" : {
       "get" : {
         "summary" : "",
@@ -671,19 +657,6 @@
       }
     },
     "/billing/prepays" : {
-      "get" : {
-        "summary" : "",
-        "description" : "",
-        "parameters" : [ ],
-        "operationId" : "",
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        }
-      }
-    },
-    "/captcha" : {
       "get" : {
         "summary" : "",
         "description" : "",
@@ -797,6 +770,160 @@
         }
       },
       "delete" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
+        "operationId" : "",
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        }
+      }
+    },
+    "/tickets" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ ],
+        "operationId" : "",
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        }
+      }
+    },
+    "/tickets/new" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ ],
+        "operationId" : "",
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        }
+      },
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ ],
+        "operationId" : "",
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        }
+      }
+    },
+    "/tickets/{id}" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
+        "operationId" : "",
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        }
+      },
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
+        "operationId" : "",
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        }
+      }
+    },
+    "/backups" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ ],
+        "operationId" : "",
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        }
+      }
+    },
+    "/backups/order" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ ],
+        "operationId" : "",
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        }
+      },
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ ],
+        "operationId" : "",
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        }
+      }
+    },
+    "/backups/{id}" : {
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          },
+          "description" : "The order ID number."
+        } ],
+        "operationId" : "",
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        }
+      },
+      "post" : {
         "summary" : "",
         "description" : "",
         "parameters" : [ {
@@ -970,19 +1097,6 @@
         }
       }
     },
-    "/home" : {
-      "get" : {
-        "summary" : "",
-        "description" : "",
-        "parameters" : [ ],
-        "operationId" : "",
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        }
-      }
-    },
     "/licenses" : {
       "get" : {
         "summary" : "",
@@ -1052,30 +1166,6 @@
           },
           "description" : "The order ID number."
         } ],
-        "operationId" : "",
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        }
-      }
-    },
-    "/login" : {
-      "get" : {
-        "summary" : "",
-        "description" : "",
-        "parameters" : [ ],
-        "operationId" : "",
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        }
-      },
-      "post" : {
-        "summary" : "",
-        "description" : "",
-        "parameters" : [ ],
         "operationId" : "",
         "responses" : {
           "default" : {
@@ -1315,19 +1405,6 @@
         }
       }
     },
-    "/signup" : {
-      "post" : {
-        "summary" : "",
-        "description" : "",
-        "parameters" : [ ],
-        "operationId" : "",
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        }
-      }
-    },
     "/ssl" : {
       "get" : {
         "summary" : "",
@@ -1366,83 +1443,6 @@
       }
     },
     "/ssl/{id}" : {
-      "get" : {
-        "summary" : "",
-        "description" : "",
-        "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "type" : "string"
-          },
-          "description" : "The order ID number."
-        } ],
-        "operationId" : "",
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        }
-      },
-      "post" : {
-        "summary" : "",
-        "description" : "",
-        "parameters" : [ {
-          "name" : "id",
-          "in" : "path",
-          "required" : true,
-          "schema" : {
-            "type" : "string"
-          },
-          "description" : "The order ID number."
-        } ],
-        "operationId" : "",
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        }
-      }
-    },
-    "/tickets" : {
-      "get" : {
-        "summary" : "",
-        "description" : "",
-        "parameters" : [ ],
-        "operationId" : "",
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        }
-      }
-    },
-    "/tickets/new" : {
-      "get" : {
-        "summary" : "",
-        "description" : "",
-        "parameters" : [ ],
-        "operationId" : "",
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        }
-      },
-      "post" : {
-        "summary" : "",
-        "description" : "",
-        "parameters" : [ ],
-        "operationId" : "",
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        }
-      }
-    },
-    "/tickets/{id}" : {
       "get" : {
         "summary" : "",
         "description" : "",

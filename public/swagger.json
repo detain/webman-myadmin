@@ -57,74 +57,212 @@
   } ],
   "paths" : {
     "/invoices" : {
-      "get" : {
-        "summary" : "get a listing of invoices",
-        "operationId" : "getInvoices",
-        "parameters" : [ {
-          "in" : "query",
-          "name" : "searchString",
-          "description" : "pass an optional search string for looking up inventory",
-          "required" : false,
-          "schema" : {
-            "type" : "string"
-          }
-        }, {
-          "name" : "skip",
-          "in" : "query",
-          "description" : "number of records to skip for pagination",
-          "schema" : {
-            "type" : "integer",
-            "format" : "int32",
-            "minimum" : 0
-          }
-        }, {
-          "name" : "limit",
-          "in" : "query",
-          "description" : "maximum number of records to return",
-          "schema" : {
-            "type" : "integer",
-            "format" : "int32",
-            "minimum" : 0,
-            "maximum" : 50
-          }
-        } ],
-        "responses" : {
-          "200" : {
-            "description" : "search results matching criteria",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/Invoice"
-                  }
-                }
-              }
-            },
-            "links" : {
-              "sendMailByIdLink" : {
-                "operationId" : "sendMail",
-                "parameters" : {
-                  "id" : "$response.body#/0/id"
-                },
-                "description" : "The `id` value returned in the response can be used as the `id` parameter in `GET /mail/advsend`."
-              }
-            }
-          },
-          "400" : {
-            "description" : "bad input parameter"
-          },
-          "401" : {
-            "$ref" : "#/components/responses/Unauthorized"
-          },
-          "404" : {
-            "$ref" : "#/components/responses/Unauthorized"
-          }
-        },
-        "tags" : [ "billing" ]
-      }
+      "get" : null
+    },
+    "/login" : {
+      "get" : null,
+      "post" : null
+    },
+    "/signup" : {
+      "post" : null
+    },
+    "/captcha" : {
+      "get" : null
+    },
+    "/home" : {
+      "get" : null
+    },
+    "/account" : {
+      "get" : null,
+      "post" : null
+    },
+    "/account/2fa" : {
+      "post" : null
+    },
+    "/account/apikey" : {
+      "post" : null
+    },
+    "/account/countries" : {
+      "get" : null
+    },
+    "/account/creditcards" : {
+      "post" : null
+    },
+    "/account/creditcards/{id}" : {
+      "post" : null,
+      "delete" : null
+    },
+    "/account/features" : {
+      "post" : null
+    },
+    "/account/iplimits" : {
+      "post" : null,
+      "delete" : null
+    },
+    "/account/oauth" : {
+      "delete" : null
+    },
+    "/account/oauth/logout" : {
+      "get" : null
+    },
+    "/account/password" : {
+      "post" : null
+    },
+    "/account/settings" : {
+      "get" : null,
+      "post" : null
+    },
+    "/account/sshkey" : {
+      "post" : null
+    },
+    "/backups" : {
+      "get" : null
+    },
+    "/backups/order" : {
+      "get" : null,
+      "post" : null
+    },
+    "/backups/{id:\\d+}" : {
+      "get" : null,
+      "post" : null
+    },
+    "/billing/cart" : {
+      "get" : null
+    },
+    "/billing/prepays" : {
+      "get" : null
+    },
+    "/dns" : {
+      "get" : null,
+      "post" : null
+    },
+    "/dns/{domainId}/{recordId}" : {
+      "post" : null,
+      "delete" : null
+    },
+    "/dns/{id:\\d+}" : {
+      "get" : null,
+      "delete" : null
+    },
+    "/domains" : {
+      "get" : null
+    },
+    "/domains/order" : {
+      "get" : null,
+      "post" : null
+    },
+    "/domains/{id}" : {
+      "get" : null,
+      "post" : null
+    },
+    "/floating_ip" : {
+      "get" : null
+    },
+    "/floating_ips/order" : {
+      "get" : null,
+      "post" : null
+    },
+    "/floating_ips/{id}" : {
+      "get" : null,
+      "post" : null
+    },
+    "/licenses" : {
+      "get" : null
+    },
+    "/licenses/order" : {
+      "get" : null,
+      "post" : null
+    },
+    "/licenses/{id}" : {
+      "get" : null,
+      "post" : null
     },
     "/mail" : {
+      "get" : null
+    },
+    "/mail/order" : {
+      "get" : null,
+      "post" : null
+    },
+    "/mail/{id}" : {
+      "get" : null,
+      "post" : null
+    },
+    "/qs" : {
+      "get" : null
+    },
+    "/qs/order" : {
+      "get" : null,
+      "post" : null
+    },
+    "/qs/{id}" : {
+      "get" : null,
+      "post" : null
+    },
+    "/servers" : {
+      "get" : null
+    },
+    "/servers/order" : {
+      "get" : null,
+      "post" : null
+    },
+    "/servers/{id}" : {
+      "get" : null,
+      "post" : null
+    },
+    "/ssl" : {
+      "get" : null
+    },
+    "/ssl/order" : {
+      "get" : null,
+      "post" : null
+    },
+    "/ssl/{id}" : {
+      "get" : null,
+      "post" : null
+    },
+    "/tickets" : {
+      "get" : null
+    },
+    "/tickets/new" : {
+      "get" : null,
+      "post" : null
+    },
+    "/tickets/{id}" : {
+      "get" : null,
+      "post" : null
+    },
+    "/vps" : {
+      "get" : null
+    },
+    "/vps/order" : {
+      "get" : null
+    },
+    "/vps/{id}" : {
+      "get" : null,
+      "post" : null
+    },
+    "/vps/{id}/restart" : {
+      "get" : null
+    },
+    "/vps/{id}/start" : {
+      "get" : null
+    },
+    "/vps/{id}/stop" : {
+      "get" : null
+    },
+    "/websites" : {
+      "get" : null
+    },
+    "/websites/order" : {
+      "get" : null,
+      "post" : null
+    },
+    "/websites/{id}" : {
+      "get" : null,
+      "post" : null
+    },
+    "/old/mail" : {
       "get" : {
         "summary" : "displays a list of mail service orders",
         "operationId" : "getMailOrders",
@@ -183,7 +321,7 @@
         }
       }
     },
-    "/mail/send" : {
+    "/old/mail/send" : {
       "post" : {
         "summary" : "Sends an Email",
         "operationId" : "sendMail",
@@ -226,7 +364,7 @@
         }
       }
     },
-    "/mail/advsend" : {
+    "/old/mail/advsend" : {
       "post" : {
         "summary" : "Sends an Email with Advanced Options",
         "operationId" : "sendAdvMail",
@@ -269,7 +407,7 @@
         }
       }
     },
-    "/mail/log" : {
+    "/old/mail/log" : {
       "get" : {
         "summary" : "displays the mail log",
         "operationId" : "viewMailLog",

@@ -373,7 +373,9 @@
             "description" : "Default response"
           }
         }
-      }
+      },
+      "summary" : "Log In to the system and create a session.",
+      "description" : "Submit your login credentials to generate a session id which can be used for validating requests."
     },
     "/signup" : {
       "post" : {

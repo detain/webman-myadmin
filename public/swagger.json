@@ -1086,6 +1086,7 @@
     },
     "/licenses" : {
       "get" : {
+        "tags" : [ "licenses" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1098,6 +1099,7 @@
     },
     "/licenses/order" : {
       "get" : {
+        "tags" : [ "licenses" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1108,6 +1110,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "licenses" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1120,6 +1123,7 @@
     },
     "/licenses/{id}" : {
       "get" : {
+        "tags" : [ "licenses" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -1139,6 +1143,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "licenses" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -1160,6 +1165,7 @@
     },
     "/mail" : {
       "get" : {
+        "tags" : [ "mail" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1172,6 +1178,7 @@
     },
     "/mail/order" : {
       "get" : {
+        "tags" : [ "mail" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1182,6 +1189,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "mail" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1194,6 +1202,7 @@
     },
     "/mail/{id}" : {
       "get" : {
+        "tags" : [ "mail" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -1213,6 +1222,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "mail" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -1234,6 +1244,7 @@
     },
     "/qs" : {
       "get" : {
+        "tags" : [ "quickservers" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1246,6 +1257,7 @@
     },
     "/qs/order" : {
       "get" : {
+        "tags" : [ "quickservers" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1256,6 +1268,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "quickservers" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1268,6 +1281,7 @@
     },
     "/qs/{id}" : {
       "get" : {
+        "tags" : [ "quickservers" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -1287,6 +1301,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "quickservers" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -1308,6 +1323,7 @@
     },
     "/servers" : {
       "get" : {
+        "tags" : [ "servers" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1320,6 +1336,7 @@
     },
     "/servers/order" : {
       "get" : {
+        "tags" : [ "servers" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1330,6 +1347,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "servers" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1342,6 +1360,7 @@
     },
     "/servers/{id}" : {
       "get" : {
+        "tags" : [ "servers" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -1361,6 +1380,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "servers" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -1382,6 +1402,7 @@
     },
     "/ssl" : {
       "get" : {
+        "tags" : [ "ssl" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1394,6 +1415,7 @@
     },
     "/ssl/order" : {
       "get" : {
+        "tags" : [ "ssl" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1404,6 +1426,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "ssl" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1416,6 +1439,7 @@
     },
     "/ssl/{id}" : {
       "get" : {
+        "tags" : [ "ssl" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -1435,6 +1459,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "ssl" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -1456,6 +1481,7 @@
     },
     "/vps" : {
       "get" : {
+        "tags" : [ "vps" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1468,6 +1494,7 @@
     },
     "/vps/order" : {
       "get" : {
+        "tags" : [ "vps" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1478,6 +1505,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "vps" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1490,6 +1518,7 @@
     },
     "/vps/{id}" : {
       "get" : {
+        "tags" : [ "vps" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -1509,6 +1538,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "vps" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -1530,6 +1560,7 @@
     },
     "/vps/{id}/restart" : {
       "get" : {
+        "tags" : [ "vps" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -1551,6 +1582,7 @@
     },
     "/vps/{id}/start" : {
       "get" : {
+        "tags" : [ "vps" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -1572,6 +1604,7 @@
     },
     "/vps/{id}/stop" : {
       "get" : {
+        "tags" : [ "vps" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -1593,6 +1626,7 @@
     },
     "/websites" : {
       "get" : {
+        "tags" : [ "webhosting" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1605,6 +1639,7 @@
     },
     "/websites/order" : {
       "get" : {
+        "tags" : [ "webhosting" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1615,6 +1650,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "webhosting" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1627,6 +1663,7 @@
     },
     "/websites/{id}" : {
       "get" : {
+        "tags" : [ "webhosting" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -1646,6 +1683,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "webhosting" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",

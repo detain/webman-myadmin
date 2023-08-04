@@ -584,7 +584,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateAccountSshKey",
         "summary" : "",
         "description" : ""
       }
@@ -596,7 +596,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getBillingCart",
         "summary" : "",
         "description" : ""
       }
@@ -608,7 +608,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getBillingPrePays",
         "summary" : "",
         "description" : ""
       }
@@ -620,7 +620,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getDnsList",
         "summary" : "",
         "description" : ""
       },
@@ -630,7 +630,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "addDnsDomain",
         "summary" : "",
         "description" : ""
       }
@@ -659,7 +659,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateDnsRecord",
         "summary" : "",
         "description" : ""
       },
@@ -686,7 +686,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "deleteDnsRecord",
         "summary" : "",
         "description" : ""
       }
@@ -707,7 +707,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getDnsDomain",
         "summary" : "",
         "description" : ""
       },
@@ -726,7 +726,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "deleteDnsDomain",
         "summary" : "",
         "description" : ""
       }
@@ -738,7 +738,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getTicketsList",
         "summary" : "",
         "description" : ""
       }
@@ -750,7 +750,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getNewTicket",
         "summary" : "",
         "description" : ""
       },
@@ -760,7 +760,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "addNewTicket",
         "summary" : "",
         "description" : ""
       }
@@ -781,7 +781,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getTicketInfo",
         "summary" : "",
         "description" : ""
       },
@@ -800,7 +800,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateTicketInfo",
         "summary" : "",
         "description" : ""
       }
@@ -812,7 +812,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getBackupsList",
         "summary" : "",
         "description" : ""
       }
@@ -824,7 +824,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getNewBackup",
         "summary" : "",
         "description" : ""
       },
@@ -834,7 +834,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "addBackup",
         "summary" : "",
         "description" : ""
       }
@@ -855,7 +855,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getBackupInfo",
         "summary" : "",
         "description" : ""
       },
@@ -874,7 +874,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateBackupInfo",
         "summary" : "",
         "description" : ""
       }
@@ -886,7 +886,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getDomainsList",
         "summary" : "",
         "description" : ""
       }
@@ -898,7 +898,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getNewDomain",
         "summary" : "",
         "description" : ""
       },
@@ -908,7 +908,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "addDomain",
         "summary" : "",
         "description" : ""
       }
@@ -929,7 +929,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getDomainInfo",
         "summary" : "",
         "description" : ""
       },
@@ -948,7 +948,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateDomainInfo",
         "summary" : "",
         "description" : ""
       }
@@ -960,7 +960,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getFloatingIpsList",
         "summary" : "",
         "description" : ""
       }
@@ -972,7 +972,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getNewFloatingIp",
         "summary" : "",
         "description" : ""
       },
@@ -982,7 +982,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "addFloatingIp",
         "summary" : "",
         "description" : ""
       }
@@ -1182,7 +1182,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getQsList",
         "summary" : "",
         "description" : ""
       }
@@ -1194,7 +1194,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getNewQs",
         "summary" : "",
         "description" : ""
       },
@@ -1204,7 +1204,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "addQs",
         "summary" : "",
         "description" : ""
       }
@@ -1225,7 +1225,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getQsInfo",
         "summary" : "",
         "description" : ""
       },
@@ -1244,7 +1244,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateQsInfo",
         "summary" : "",
         "description" : ""
       }
@@ -1256,7 +1256,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getServerList",
         "summary" : "",
         "description" : ""
       }
@@ -1268,7 +1268,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getNewServer",
         "summary" : "",
         "description" : ""
       },
@@ -1278,7 +1278,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "addServer",
         "summary" : "",
         "description" : ""
       }
@@ -1299,7 +1299,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getServerInfo",
         "summary" : "",
         "description" : ""
       },
@@ -1318,7 +1318,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateServerInfo",
         "summary" : "",
         "description" : ""
       }
@@ -1330,7 +1330,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getSslList",
         "summary" : "",
         "description" : ""
       }
@@ -1342,7 +1342,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getNewSsl",
         "summary" : "",
         "description" : ""
       },
@@ -1352,7 +1352,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "addSsl",
         "summary" : "",
         "description" : ""
       }
@@ -1373,7 +1373,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getSslInfo",
         "summary" : "",
         "description" : ""
       },
@@ -1392,7 +1392,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateSslInfo",
         "summary" : "",
         "description" : ""
       }
@@ -1404,7 +1404,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getVpsList",
         "summary" : "",
         "description" : ""
       }
@@ -1416,7 +1416,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getNewVps",
         "summary" : "",
         "description" : ""
       },
@@ -1426,7 +1426,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "addVps",
         "summary" : "",
         "description" : ""
       }
@@ -1447,7 +1447,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getVpsInfo",
         "summary" : "",
         "description" : ""
       },
@@ -1466,7 +1466,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateVpsInfo",
         "summary" : "",
         "description" : ""
       }
@@ -1487,7 +1487,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "doVpsRestart",
         "summary" : "",
         "description" : ""
       }
@@ -1508,7 +1508,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "doVpsStart",
         "summary" : "",
         "description" : ""
       }
@@ -1529,7 +1529,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "doVpsStop",
         "summary" : "",
         "description" : ""
       }
@@ -1553,7 +1553,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getNewWebsite",
         "summary" : "",
         "description" : ""
       },
@@ -1563,7 +1563,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "addWebsite",
         "summary" : "",
         "description" : ""
       }
@@ -1584,7 +1584,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getWebsiteInfo",
         "summary" : "",
         "description" : ""
       },
@@ -1603,7 +1603,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateWebsiteInfo",
         "summary" : "",
         "description" : ""
       }

@@ -1003,7 +1003,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getFloatingIpInfo",
         "summary" : "",
         "description" : ""
       },
@@ -1022,7 +1022,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateFloatingIpInfo",
         "summary" : "",
         "description" : ""
       }
@@ -1034,7 +1034,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getLicenseList",
         "summary" : "",
         "description" : ""
       }
@@ -1046,7 +1046,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getNewLicense",
         "summary" : "",
         "description" : ""
       },
@@ -1056,7 +1056,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "addLicense",
         "summary" : "",
         "description" : ""
       }
@@ -1077,7 +1077,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getLicenseInfo",
         "summary" : "",
         "description" : ""
       },
@@ -1096,7 +1096,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateLicenseInfo",
         "summary" : "",
         "description" : ""
       }
@@ -1108,7 +1108,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getMailList",
         "summary" : "",
         "description" : ""
       }
@@ -1120,7 +1120,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getNewMail",
         "summary" : "",
         "description" : ""
       },
@@ -1130,7 +1130,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "addMail",
         "summary" : "",
         "description" : ""
       }
@@ -1151,7 +1151,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getMailInfo",
         "summary" : "",
         "description" : ""
       },
@@ -1170,7 +1170,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateMailInfo",
         "summary" : "",
         "description" : ""
       }

@@ -485,6 +485,7 @@
         "description" : ""
       },
       "delete" : {
+        "tags" : [ "account", "billing" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -530,6 +531,7 @@
         "description" : ""
       },
       "delete" : {
+        "tags" : [ "account" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -592,6 +594,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "account" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -617,6 +620,7 @@
     },
     "/billing/cart" : {
       "get" : {
+        "tags" : [ "account", "billing" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -629,6 +633,7 @@
     },
     "/billing/prepays" : {
       "get" : {
+        "tags" : [ "account", "billing" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -641,6 +646,7 @@
     },
     "/dns" : {
       "get" : {
+        "tags" : [ "dns" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -651,6 +657,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "dns" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -663,6 +670,7 @@
     },
     "/dns/{domainId}/{recordId}" : {
       "post" : {
+        "tags" : [ "dns" ],
         "parameters" : [ {
           "name" : "domainId",
           "description" : "The domain ID number.",
@@ -690,6 +698,7 @@
         "description" : ""
       },
       "delete" : {
+        "tags" : [ "dns" ],
         "parameters" : [ {
           "name" : "domainId",
           "description" : "The domain ID number.",
@@ -719,6 +728,7 @@
     },
     "/dns/{id}" : {
       "get" : {
+        "tags" : [ "dns" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -738,6 +748,7 @@
         "description" : ""
       },
       "delete" : {
+        "tags" : [ "dns" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -759,6 +770,7 @@
     },
     "/tickets" : {
       "get" : {
+        "tags" : [ "tickets" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -771,6 +783,7 @@
     },
     "/tickets/new" : {
       "get" : {
+        "tags" : [ "tickets" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -781,6 +794,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "tickets" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -793,6 +807,7 @@
     },
     "/tickets/{id}" : {
       "get" : {
+        "tags" : [ "tickets" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -812,6 +827,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "tickets" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -833,6 +849,7 @@
     },
     "/backups" : {
       "get" : {
+        "tags" : [ "backups" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -845,6 +862,7 @@
     },
     "/backups/order" : {
       "get" : {
+        "tags" : [ "backups" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -855,6 +873,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "backups" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -867,6 +886,7 @@
     },
     "/backups/{id}" : {
       "get" : {
+        "tags" : [ "backups" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -886,6 +906,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "backups" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -907,6 +928,7 @@
     },
     "/domains" : {
       "get" : {
+        "tags" : [ "domains" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -919,6 +941,7 @@
     },
     "/domains/order" : {
       "get" : {
+        "tags" : [ "domains" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -929,6 +952,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "domains" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -941,6 +965,7 @@
     },
     "/domains/{id}" : {
       "get" : {
+        "tags" : [ "domains" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -960,6 +985,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "domains" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -981,6 +1007,7 @@
     },
     "/floating_ip" : {
       "get" : {
+        "tags" : [ "floating_ips" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -993,6 +1020,7 @@
     },
     "/floating_ips/order" : {
       "get" : {
+        "tags" : [ "floating_ips" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1003,6 +1031,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "floating_ips" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -1015,6 +1044,7 @@
     },
     "/floating_ips/{id}" : {
       "get" : {
+        "tags" : [ "floating_ips" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",
@@ -1034,6 +1064,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "floating_ips" ],
         "parameters" : [ {
           "name" : "id",
           "description" : "The order ID number.",

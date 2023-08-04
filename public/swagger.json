@@ -1629,13 +1629,34 @@
       "get" : {
         "tags" : [ "webhosting" ],
         "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Website"
+                  }
+                }
+              },
+              "multipart/form-data" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Website"
+                  }
+                }
+              }
+            },
+            "description" : "An array of website orders"
+          },
           "default" : {
             "description" : "Default response"
           }
         },
         "operationId" : "getWebsiteList",
-        "summary" : "",
-        "description" : ""
+        "summary" : "Get Website Listing",
+        "description" : "Gets a listing of your webhosting orders and service details."
       }
     },
     "/websites/order" : {
@@ -2113,6 +2134,54 @@
       },
       "Schema" : {
         "description" : "An invoice record"
+      },
+      "Domain" : {
+        "description" : "Domain Registration order and service information.",
+        "type" : "object"
+      },
+      "SslCert" : {
+        "description" : "SSL Certficate Service Details",
+        "type" : "object"
+      },
+      "DnsDomain" : {
+        "description" : "DNS Domain Information",
+        "type" : "object"
+      },
+      "DnsRecord" : {
+        "description" : "DNS Server Domain Record ",
+        "type" : "object"
+      },
+      "Vps" : {
+        "description" : "VPS Server Information",
+        "type" : "object"
+      },
+      "Website" : {
+        "description" : "Website service information",
+        "type" : "object"
+      },
+      "QuickServer" : {
+        "description" : "Rapid Deploy Server (QuickServers) service information",
+        "type" : "object"
+      },
+      "License" : {
+        "description" : "Software License service information",
+        "type" : "object"
+      },
+      "Server" : {
+        "description" : "Dedicated Server service information",
+        "type" : "object"
+      },
+      "FloatingIp" : {
+        "description" : "Floating IPs service information",
+        "type" : "object"
+      },
+      "Backup" : {
+        "description" : "Storage Backup service information",
+        "type" : "object"
+      },
+      "Mail" : {
+        "description" : "Maill Delivery service information",
+        "type" : "object"
       }
     },
     "responses" : {

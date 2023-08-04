@@ -401,6 +401,7 @@
         "description" : ""
       },
       "post" : {
+        "tags" : [ "account" ],
         "responses" : {
           "default" : {
             "description" : "Default response"
@@ -408,7 +409,7 @@
         },
         "operationId" : "updateAccountInfo",
         "summary" : "",
-        "description" : ""
+        "description" : "Updates the stored contact and billing information we have in our system with the provided data."
       }
     },
     "/account/2fa" : {

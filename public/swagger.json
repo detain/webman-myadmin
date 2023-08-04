@@ -358,7 +358,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getCaptcha",
         "summary" : "",
         "description" : ""
       }
@@ -370,7 +370,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getHome",
         "summary" : "",
         "description" : ""
       }
@@ -382,7 +382,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getAccountInfo",
         "summary" : "",
         "description" : ""
       },
@@ -404,7 +404,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateAccountTfa",
         "summary" : "",
         "description" : ""
       }
@@ -416,7 +416,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateAccountApiKey",
         "summary" : "",
         "description" : ""
       }
@@ -428,7 +428,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getCountries",
         "summary" : "",
         "description" : ""
       }
@@ -440,7 +440,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "addAccountCreditCard",
         "summary" : "",
         "description" : ""
       }
@@ -461,7 +461,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateAccountCreditCard",
         "summary" : "",
         "description" : ""
       },
@@ -480,7 +480,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "deleteAccountCreditCard",
         "summary" : "",
         "description" : ""
       }
@@ -492,7 +492,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateAccountFeatures",
         "summary" : "",
         "description" : ""
       }
@@ -504,7 +504,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateAccountIpLimits",
         "summary" : "",
         "description" : ""
       },
@@ -514,7 +514,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "deleteAccountIpLimits",
         "summary" : "",
         "description" : ""
       }
@@ -526,7 +526,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "deleteAccountOauth",
         "summary" : "",
         "description" : ""
       }
@@ -538,7 +538,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "logoutAccountOauth",
         "summary" : "",
         "description" : ""
       }
@@ -550,7 +550,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateAccountPassword",
         "summary" : "",
         "description" : ""
       }
@@ -562,7 +562,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "getAccountSettings",
         "summary" : "",
         "description" : ""
       },
@@ -572,7 +572,7 @@
             "description" : "Default response"
           }
         },
-        "operationId" : "",
+        "operationId" : "updateAccountSettings",
         "summary" : "",
         "description" : ""
       }

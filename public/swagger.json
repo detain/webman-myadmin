@@ -140,13 +140,30 @@
       "get" : {
         "tags" : [ "public" ],
         "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/CaptchaResponse"
+                },
+                "examples" : {
+                  "CaptchaResponseExample" : {
+                    "value" : {
+                      "captcha" : "data:image/jpeg;base64,/9j/4AAQ"
+                    }
+                  }
+                }
+              }
+            },
+            "description" : "An array containing a `captcha` field containing a string with a base64 encoded captcha image."
+          },
           "default" : {
             "description" : "Default response"
           }
         },
         "security" : [ { } ],
         "operationId" : "getCaptcha",
-        "summary" : "",
+        "summary" : "Retrieve the data to render a captcha image.",
         "description" : "Retrieves the information so you can render a captcha check"
       }
     },
@@ -154,6 +171,16 @@
       "get" : {
         "tags" : [ "account" ],
         "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Home"
+                }
+              }
+            },
+            "description" : "Genreal information for use on the home page."
+          },
           "default" : {
             "description" : "Default response"
           }
@@ -174,322 +201,6 @@
               "application/json" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/AccountInfo"
-                },
-                "examples" : {
-                  "AccountResponse" : {
-                    "value" : {
-                      "custid" : "98651",
-                      "ima" : "client",
-                      "data" : {
-                        "group" : "0",
-                        "address" : "112 Uber St.",
-                        "city" : "Townsville",
-                        "country" : "US",
-                        "disable_cc" : "0",
-                        "fraudrecord_score" : "0",
-                        "ima" : "client",
-                        "name" : "John Doe",
-                        "payment_method" : "paypal",
-                        "phone" : "8675309",
-                        "pin" : "000000",
-                        "state" : "PA",
-                        "status" : "active",
-                        "zip" : "11111",
-                        "account_id" : "98651",
-                        "account_lid" : "user@domain.com",
-                        "address2" : "",
-                        "affiliate_dock_description" : "Use this coupon when placing an order to get the first month of hosting for only 1 penny.",
-                        "affiliate_dock_title" : "Exclusive offer to viewers",
-                        "affiliate_payment_method" : "paypal",
-                        "affiliate_paypal" : "user@domain.com",
-                        "cc" : "************1111",
-                        "cc_auto" : "0",
-                        "cc_exp" : "05/2019",
-                        "cc_type" : "visa",
-                        "cc_whitelist" : "1",
-                        "ccs" : {
-                          "1" : {
-                            "cc" : "************1111",
-                            "cc_exp" : "05/2019",
-                            "name" : "John Doe",
-                            "country" : "US",
-                            "verified" : true
-                          },
-                          "5" : {
-                            "cc" : "************2222",
-                            "cc_exp" : "05/2019",
-                            "name" : "John Doe",
-                            "address" : "123 Uber St",
-                            "city" : "Townsville",
-                            "state" : "PA",
-                            "zip" : "11122",
-                            "country" : "US",
-                            "maxmind_riskscore" : "0.25",
-                            "maxmind" : {
-                              "distance" : "0",
-                              "countryMatch" : "Yes",
-                              "countryCode" : "US",
-                              "freeMail" : "No",
-                              "anonymousProxy" : "No",
-                              "binMatch" : "No",
-                              "binCountry" : "IN",
-                              "err" : "",
-                              "proxyScore" : "0.00",
-                              "ip_region" : "PA",
-                              "ip_city" : "Townsville",
-                              "ip_latitude" : "40.175",
-                              "ip_longitude" : "-76.1817",
-                              "binName" : "state bank of india",
-                              "ip_isp" : "PenTeleData",
-                              "ip_org" : "PenTeleData",
-                              "binNameMatch" : "NA",
-                              "binPhoneMatch" : "NA",
-                              "binPhone" : "",
-                              "custPhoneInBillingLoc" : "NotFound",
-                              "highRiskCountry" : "No",
-                              "queriesRemaining" : "2764",
-                              "cityPostalMatch" : "Yes",
-                              "shipCityPostalMatch" : "",
-                              "maxmindID" : "7IVXKOVV",
-                              "ip_asnum" : "AS3737 AS-PTD",
-                              "ip_userType" : "residential",
-                              "ip_countryConf" : "99",
-                              "ip_regionConf" : "99",
-                              "ip_cityConf" : "30",
-                              "ip_postalCode" : "11122",
-                              "ip_postalConf" : "30",
-                              "ip_accuracyRadius" : "20",
-                              "ip_netSpeedCell" : "Cable/DSL",
-                              "ip_metroCode" : "566",
-                              "ip_areaCode" : "",
-                              "ip_timeZone" : "America/New_York",
-                              "ip_regionName" : "Pennsylvania",
-                              "ip_domain" : "ptd.net",
-                              "ip_countryName" : "United States",
-                              "ip_continentCode" : "NA",
-                              "ip_corporateProxy" : "No",
-                              "isTransProxy" : "No",
-                              "carderEmail" : "No",
-                              "highRiskUsername" : "No",
-                              "highRiskPassword" : "No",
-                              "riskScore" : 0.25,
-                              "prepaid" : "No",
-                              "minfraud_version" : "1.3",
-                              "service_level" : "premium",
-                              "female_name" : "no"
-                            },
-                            "verified" : true
-                          },
-                          "6" : {
-                            "cc" : "************1111",
-                            "cc_exp" : "05/2021",
-                            "name" : "John Doe",
-                            "city" : "Townsville",
-                            "state" : "PA",
-                            "zip" : "11122",
-                            "country" : "US",
-                            "maxmind_riskscore" : "0.48",
-                            "maxmind" : {
-                              "distance" : "0",
-                              "countryMatch" : "Yes",
-                              "countryCode" : "US",
-                              "freeMail" : "No",
-                              "anonymousProxy" : "No",
-                              "binMatch" : "Yes",
-                              "binCountry" : "US",
-                              "err" : "",
-                              "proxyScore" : "0.00",
-                              "ip_region" : "PA",
-                              "ip_city" : "Townsville",
-                              "ip_latitude" : "40.175",
-                              "ip_longitude" : "-76.1817",
-                              "binName" : "Bank of No Hope",
-                              "ip_isp" : "PenTeleData",
-                              "ip_org" : "PenTeleData",
-                              "binNameMatch" : "NA",
-                              "binPhoneMatch" : "NA",
-                              "binPhone" : "1234561234",
-                              "custPhoneInBillingLoc" : "NotFound",
-                              "highRiskCountry" : "No",
-                              "queriesRemaining" : "2765",
-                              "cityPostalMatch" : "Yes",
-                              "shipCityPostalMatch" : "",
-                              "maxmindID" : "AAAAAZZZZZ",
-                              "ip_asnum" : "AS3737 AS-PTD",
-                              "ip_userType" : "residential",
-                              "ip_countryConf" : "99",
-                              "ip_regionConf" : "99",
-                              "ip_cityConf" : "30",
-                              "ip_postalCode" : "11122",
-                              "ip_postalConf" : "30",
-                              "ip_accuracyRadius" : "20",
-                              "ip_netSpeedCell" : "Cable/DSL",
-                              "ip_metroCode" : "566",
-                              "ip_areaCode" : "",
-                              "ip_timeZone" : "America/New_York",
-                              "ip_regionName" : "Pennsylvania",
-                              "ip_domain" : "ptd.net",
-                              "ip_countryName" : "United States",
-                              "ip_continentCode" : "NA",
-                              "ip_corporateProxy" : "No",
-                              "isTransProxy" : "No",
-                              "carderEmail" : "No",
-                              "highRiskUsername" : "No",
-                              "highRiskPassword" : "No",
-                              "riskScore" : 0.48,
-                              "prepaid" : "No",
-                              "minfraud_version" : "1.3",
-                              "service_level" : "premium",
-                              "female_name" : "no"
-                            },
-                            "verified" : true
-                          }
-                        },
-                        "ccs_added" : "14",
-                        "company" : "InterServer, Inc.",
-                        "currency" : "USD",
-                        "disable_reinstall" : "0",
-                        "disable_reset" : "0",
-                        "email" : "user@domain.com",
-                        "email_abuse" : "",
-                        "email_settings" : {
-                          "admin/cc_bad_response" : "1",
-                          "admin/mass_communications.tpl" : "1"
-                        },
-                        "extra" : {
-                          "private_whois" : "0"
-                        },
-                        "facebook_id" : "111111111111111",
-                        "facebook_url" : "https://www.facebook.com/111111111111111",
-                        "firstname" : "John",
-                        "fraudrecord" : {
-                          "score" : "0",
-                          "count" : "0",
-                          "reliability" : "0.0",
-                          "code" : "zxcvzxcvzxcv"
-                        },
-                        "github_id" : "2222222",
-                        "github_url" : "https://github.com/user",
-                        "google_id" : "355431342512341234",
-                        "google_url" : "https://plus.google.com/+JohnDoe",
-                        "innertell_id" : "2222222",
-                        "lastname" : "Doe",
-                        "locale" : "auto",
-                        "maxmind" : {
-                          "distance" : "6146",
-                          "countryMatch" : "No",
-                          "countryCode" : "US",
-                          "freeMail" : "No",
-                          "anonymousProxy" : "No",
-                          "score" : "5.00",
-                          "binMatch" : "NotFound",
-                          "binCountry" : "",
-                          "err" : "CITY_NOT_FOUND",
-                          "proxyScore" : "0.00",
-                          "ip_region" : "PA",
-                          "ip_city" : "Townsville",
-                          "ip_latitude" : "40.1767",
-                          "ip_longitude" : "-76.4297",
-                          "binName" : "",
-                          "ip_isp" : "PenTeleData",
-                          "ip_org" : "PenTeleData",
-                          "binNameMatch" : "NA",
-                          "binPhoneMatch" : "NA",
-                          "binPhone" : "",
-                          "custPhoneInBillingLoc" : "",
-                          "highRiskCountry" : "No",
-                          "queriesRemaining" : "171",
-                          "cityPostalMatch" : "",
-                          "shipCityPostalMatch" : "",
-                          "maxmindID" : "HMOCUJP7",
-                          "ip_asnum" : "AS3737 PenTeleData Inc.",
-                          "ip_userType" : "residential",
-                          "ip_countryConf" : "99",
-                          "ip_regionConf" : "97",
-                          "ip_cityConf" : "30",
-                          "ip_postalCode" : "11122",
-                          "ip_postalConf" : "30",
-                          "ip_accuracyRadius" : "10",
-                          "ip_netSpeedCell" : "Dialup",
-                          "ip_metroCode" : "566",
-                          "ip_areaCode" : "333",
-                          "ip_timeZone" : "America/New_York",
-                          "ip_regionName" : "Pennsylvania",
-                          "ip_domain" : "ptd.net",
-                          "ip_countryName" : "United States",
-                          "ip_continentCode" : "NA",
-                          "ip_corporateProxy" : "No",
-                          "carderEmail" : "No",
-                          "highRiskUsername" : "No",
-                          "riskScore" : "4.82",
-                          "explanation" : "You should review this order carefully, as it is considered high risk. We suggest you be very cautious about accepting this order. This order is higher risk because the distance between the billing address and the user's actual location is so great. The order is higher risk because the billing country and the country in which the IP address is located don't match",
-                          "female_name" : "no"
-                        },
-                        "maxmind_score" : "0",
-                        "mb_id" : "4769",
-                        "modernbill_id" : "1234",
-                        "picture" : "https://avatars3.githubusercontent.com/u/1364504",
-                        "referrer_coupon" : "detainaffiliatecoupon",
-                        "reseller_markup" : "10",
-                        "username" : "user@domain.com",
-                        "ssh_key" : "zzzz",
-                        "ssh_key_wrapped" : "zzzz",
-                        "api_key" : "aaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbccccccccccccccccccc",
-                        "api_key_wrapped" : "aaaaaaaaaaaaaaaaaaaaaaa<br>bbbbbbbbbbbbb<br>ccccccccccccccccccc",
-                        "2fa_google_key" : "ssssssssssssssssssssssssss",
-                        "2fa_google_enabled" : true,
-                        "2fa_google" : 1,
-                        "2fa_google_split" : "zzzz zzzz zzzz zzzz ",
-                        "2fa_google_qr" : "data:image/png;base64,zzz"
-                      },
-                      "ip" : "1.2.3.4",
-                      "oauthproviders" : { },
-                      "oauthconfig" : {
-                        "callback" : "https://my.interserver.net/oauth/callback.php",
-                        "providers" : {
-                          "Twitter" : {
-                            "enabled" : false,
-                            "linked" : false
-                          },
-                          "Facebook" : {
-                            "enabled" : true,
-                            "account" : "111111111111111111111",
-                            "url" : "https://www.facebook.com/111111111111111111111",
-                            "linked" : true
-                          },
-                          "Google" : {
-                            "enabled" : true,
-                            "account" : "111111111111111111111",
-                            "url" : "https://plus.google.com/+UserName",
-                            "linked" : true
-                          },
-                          "GitHub" : {
-                            "enabled" : true,
-                            "account" : "111111111111111111111",
-                            "url" : "https://github.com/detain",
-                            "linked" : true
-                          }
-                        }
-                      },
-                      "oauthadapters" : [ ],
-                      "limits" : [ {
-                        "start" : "1.1.1.1",
-                        "end" : "1.1.1.254"
-                      }, {
-                        "start" : "2600:387:0:809::1b",
-                        "end" : "2600:387:0:809::1b"
-                      } ],
-                      "language" : "en-US",
-                      "countryCurrencies" : {
-                        "CN" : [ "USD" ],
-                        "BR" : [ "USD", "BRL" ],
-                        "RU" : [ "USD" ]
-                      },
-                      "enableLocales" : true,
-                      "enableCurrencies" : false,
-                      "gravatar" : "https://avatars3.githubusercontent.com/u/1364504"
-                    }
-                  }
                 }
               }
             },
@@ -550,48 +261,6 @@
           }
         },
         "operationId" : "addAccountCreditCard",
-        "summary" : "",
-        "description" : ""
-      }
-    },
-    "/account/creditcards/{id}" : {
-      "post" : {
-        "tags" : [ "account", "billing" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "integer"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "updateAccountCreditCard",
-        "summary" : "",
-        "description" : ""
-      },
-      "delete" : {
-        "tags" : [ "account", "billing" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "string"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "deleteAccountCreditCard",
         "summary" : "",
         "description" : ""
       }
@@ -690,19 +359,6 @@
         "description" : ""
       }
     },
-    "/account/oauth/logout" : {
-      "get" : {
-        "tags" : [ "account" ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "logoutAccountOauth",
-        "summary" : "",
-        "description" : ""
-      }
-    },
     "/account/password" : {
       "post" : {
         "tags" : [ "account" ],
@@ -779,61 +435,9 @@
         "description" : ""
       }
     },
-    "/dns" : {
-      "get" : {
-        "tags" : [ "dns" ],
-        "responses" : {
-          "200" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/DnsListItem"
-                  }
-                },
-                "examples" : {
-                  "DnsListExample" : {
-                    "value" : [ {
-                      "id" : "68",
-                      "name" : "hussfamily.com",
-                      "content" : "64.20.35.186"
-                    }, {
-                      "id" : "1658",
-                      "name" : "detain.interserver.net",
-                      "content" : "66.45.228.74"
-                    }, {
-                      "id" : "1659",
-                      "name" : "creation.interserver.net",
-                      "content" : "66.23.239.99"
-                    } ]
-                  }
-                }
-              }
-            },
-            "description" : "Listing of Dns Domains setup"
-          },
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "getDnsList",
-        "summary" : "List of Domains on DNS Server",
-        "description" : "Gets a list of the domains currently configured on the DNS servers"
-      },
-      "post" : {
-        "tags" : [ "dns" ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "addDnsDomain",
-        "summary" : "",
-        "description" : ""
-      }
-    },
     "/dns/{id}" : {
+      "summary" : "DNS Domain Management",
+      "description" : "View and manage a domain and the records for it.",
       "get" : {
         "tags" : [ "dns" ],
         "parameters" : [ {
@@ -903,7 +507,18 @@
         },
         "operationId" : "getDnsDomain",
         "summary" : "Gets the DNS Records for a domain.",
-        "description" : "Return sa list of all of tHe dns recores."
+        "description" : "Returns a list of all of the dns records."
+      },
+      "post" : {
+        "tags" : [ "dns" ],
+        "responses" : {
+          "200" : {
+            "description" : "Add DNS Domain Response"
+          }
+        },
+        "operationId" : "updateDnsDomain",
+        "summary" : "Add DNS Domain",
+        "description" : "Creates a new Domain on the DNS Servers."
       },
       "delete" : {
         "tags" : [ "dns" ],
@@ -922,9 +537,18 @@
           }
         },
         "operationId" : "deleteDnsDomain",
-        "summary" : "",
-        "description" : ""
-      }
+        "summary" : "Delete a DNS Domain",
+        "description" : "Deletes a domain from the DNS servers."
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "The DNS Domain ID.",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
     },
     "/tickets" : {
       "get" : {
@@ -1069,11 +693,32 @@
       "get" : {
         "tags" : [ "backups" ],
         "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BackupsOrder"
+                }
+              }
+            },
+            "description" : "Information needed to generate an order form."
+          },
           "default" : {
             "description" : "Default response"
           }
         },
         "operationId" : "getNewBackup",
+        "summary" : "",
+        "description" : ""
+      },
+      "put" : {
+        "tags" : [ "backups" ],
+        "responses" : {
+          "200" : {
+            "description" : "Validate Backup Order Response"
+          }
+        },
+        "operationId" : "putBackups",
         "summary" : "",
         "description" : ""
       },
@@ -1113,7 +758,7 @@
                     }, {
                       "domain_id" : "592337",
                       "domain_hostname" : "detain.dev",
-                      "domain_expire_date" : "2023-08-14 00:59:38",
+                      "domain_expire_date" : "2023-08-14T00:59:38.000Z",
                       "cost" : "18.00",
                       "domain_status" : "active"
                     } ]
@@ -1136,11 +781,32 @@
       "get" : {
         "tags" : [ "domains" ],
         "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/DomainOrder"
+                }
+              }
+            },
+            "description" : "Domain registration order information."
+          },
           "default" : {
             "description" : "Default response"
           }
         },
         "operationId" : "getNewDomain",
+        "summary" : "",
+        "description" : ""
+      },
+      "put" : {
+        "tags" : [ "domains" ],
+        "responses" : {
+          "200" : {
+            "description" : "Validate Domain Order response"
+          }
+        },
+        "operationId" : "putDomains",
         "summary" : "",
         "description" : ""
       },
@@ -1154,131 +820,15 @@
         "operationId" : "addDomain",
         "summary" : "",
         "description" : ""
-      }
-    },
-    "/domains/{id}" : {
-      "get" : {
-        "tags" : [ "domains" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "integer"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "getDomainInfo",
-        "summary" : "",
-        "description" : ""
       },
-      "post" : {
+      "patch" : {
         "tags" : [ "domains" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "string"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "updateDomainInfo",
-        "summary" : "",
-        "description" : ""
-      }
-    },
-    "/floating_ip" : {
-      "get" : {
-        "tags" : [ "floating_ips" ],
         "responses" : {
           "200" : {
-            "content" : {
-              "application/json" : { }
-            },
-            "description" : "The listing of `Floating IPs` services on your account."
-          },
-          "default" : {
-            "description" : "Default response"
+            "description" : "Validate Domain order response"
           }
         },
-        "operationId" : "getFloatingIpsList",
-        "summary" : "",
-        "description" : ""
-      }
-    },
-    "/floating_ips/order" : {
-      "get" : {
-        "tags" : [ "floating_ips" ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "getNewFloatingIp",
-        "summary" : "",
-        "description" : ""
-      },
-      "post" : {
-        "tags" : [ "floating_ips" ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "addFloatingIp",
-        "summary" : "",
-        "description" : ""
-      }
-    },
-    "/floating_ips/{id}" : {
-      "get" : {
-        "tags" : [ "floating_ips" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "integer"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "getFloatingIpInfo",
-        "summary" : "",
-        "description" : ""
-      },
-      "post" : {
-        "tags" : [ "floating_ips" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "string"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "updateFloatingIpInfo",
+        "operationId" : "patchDomains",
         "summary" : "",
         "description" : ""
       }
@@ -1313,11 +863,32 @@
       "get" : {
         "tags" : [ "licenses" ],
         "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/LicensesOrder"
+                }
+              }
+            },
+            "description" : "License ordering information."
+          },
           "default" : {
             "description" : "Default response"
           }
         },
         "operationId" : "getNewLicense",
+        "summary" : "",
+        "description" : ""
+      },
+      "put" : {
+        "tags" : [ "licenses" ],
+        "responses" : {
+          "200" : {
+            "description" : "Validate Licenses order response"
+          }
+        },
+        "operationId" : "putLicenses",
         "summary" : "",
         "description" : ""
       },
@@ -1329,48 +900,6 @@
           }
         },
         "operationId" : "addLicense",
-        "summary" : "",
-        "description" : ""
-      }
-    },
-    "/licenses/{id}" : {
-      "get" : {
-        "tags" : [ "licenses" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "integer"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "getLicenseInfo",
-        "summary" : "",
-        "description" : ""
-      },
-      "post" : {
-        "tags" : [ "licenses" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "string"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "updateLicenseInfo",
         "summary" : "",
         "description" : ""
       }
@@ -1405,11 +934,32 @@
       "get" : {
         "tags" : [ "mail" ],
         "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MailOrder"
+                }
+              }
+            },
+            "description" : "Mail ordering information."
+          },
           "default" : {
             "description" : "Default response"
           }
         },
         "operationId" : "getNewMail",
+        "summary" : "",
+        "description" : ""
+      },
+      "put" : {
+        "tags" : [ "mail" ],
+        "responses" : {
+          "200" : {
+            "description" : "Validate Mail order response."
+          }
+        },
+        "operationId" : "putMail",
         "summary" : "",
         "description" : ""
       },
@@ -1421,48 +971,6 @@
           }
         },
         "operationId" : "addMail",
-        "summary" : "",
-        "description" : ""
-      }
-    },
-    "/mail/{id}" : {
-      "get" : {
-        "tags" : [ "mail" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "integer"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "getMailInfo",
-        "summary" : "",
-        "description" : ""
-      },
-      "post" : {
-        "tags" : [ "mail" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "string"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "updateMailInfo",
         "summary" : "",
         "description" : ""
       }
@@ -1497,11 +1005,32 @@
       "get" : {
         "tags" : [ "quickservers" ],
         "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/QuickserverOrder"
+                }
+              }
+            },
+            "description" : "Quickserver Ordering information."
+          },
           "default" : {
             "description" : "Default response"
           }
         },
         "operationId" : "getNewQs",
+        "summary" : "",
+        "description" : ""
+      },
+      "put" : {
+        "tags" : [ "qs" ],
+        "responses" : {
+          "200" : {
+            "description" : "Validate QuickServer Order response"
+          }
+        },
+        "operationId" : "putQs",
         "summary" : "",
         "description" : ""
       },
@@ -1513,48 +1042,6 @@
           }
         },
         "operationId" : "addQs",
-        "summary" : "",
-        "description" : ""
-      }
-    },
-    "/qs/{id}" : {
-      "get" : {
-        "tags" : [ "quickservers" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "integer"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "getQsInfo",
-        "summary" : "",
-        "description" : ""
-      },
-      "post" : {
-        "tags" : [ "quickservers" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "string"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "updateQsInfo",
         "summary" : "",
         "description" : ""
       }
@@ -1589,11 +1076,32 @@
       "get" : {
         "tags" : [ "servers" ],
         "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ServerOrder"
+                }
+              }
+            },
+            "description" : "Server Ordering details"
+          },
           "default" : {
             "description" : "Default response"
           }
         },
         "operationId" : "getNewServer",
+        "summary" : "",
+        "description" : ""
+      },
+      "put" : {
+        "tags" : [ "servers" ],
+        "responses" : {
+          "200" : {
+            "description" : "Validate Server order response"
+          }
+        },
+        "operationId" : "putServers",
         "summary" : "",
         "description" : ""
       },
@@ -1609,61 +1117,11 @@
         "description" : ""
       }
     },
-    "/servers/{id}" : {
-      "get" : {
-        "tags" : [ "servers" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "integer"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "getServerInfo",
-        "summary" : "",
-        "description" : ""
-      },
-      "post" : {
-        "tags" : [ "servers" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "string"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "updateServerInfo",
-        "summary" : "",
-        "description" : ""
-      }
-    },
     "/ssl" : {
       "get" : {
         "tags" : [ "ssl" ],
         "responses" : {
           "200" : {
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : { }
-                }
-              }
-            },
             "description" : "The listing of `SSL` services on your account."
           },
           "default" : {
@@ -1687,6 +1145,17 @@
         "summary" : "",
         "description" : ""
       },
+      "put" : {
+        "tags" : [ "ssl" ],
+        "responses" : {
+          "200" : {
+            "description" : "Validate SSL Order response"
+          }
+        },
+        "operationId" : "putSsl",
+        "summary" : "",
+        "description" : ""
+      },
       "post" : {
         "tags" : [ "ssl" ],
         "responses" : {
@@ -1695,48 +1164,6 @@
           }
         },
         "operationId" : "addSsl",
-        "summary" : "",
-        "description" : ""
-      }
-    },
-    "/ssl/{id}" : {
-      "get" : {
-        "tags" : [ "ssl" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "integer"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "getSslInfo",
-        "summary" : "",
-        "description" : ""
-      },
-      "post" : {
-        "tags" : [ "ssl" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "string"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "updateSslInfo",
         "summary" : "",
         "description" : ""
       }
@@ -1771,11 +1198,32 @@
       "get" : {
         "tags" : [ "vps" ],
         "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/VpsOrder"
+                }
+              }
+            },
+            "description" : "VPS Order information"
+          },
           "default" : {
             "description" : "Default response"
           }
         },
         "operationId" : "getNewVps",
+        "summary" : "",
+        "description" : ""
+      },
+      "put" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "Validate VPS order response."
+          }
+        },
+        "operationId" : "putVps",
         "summary" : "",
         "description" : ""
       },
@@ -1796,7 +1244,7 @@
         "tags" : [ "vps" ],
         "parameters" : [ {
           "name" : "id",
-          "description" : "The order ID number.",
+          "description" : "VPS ID number",
           "schema" : {
             "type" : "integer"
           },
@@ -1841,73 +1289,16 @@
         "operationId" : "updateVpsInfo",
         "summary" : "",
         "description" : ""
-      }
-    },
-    "/vps/{id}/restart" : {
-      "get" : {
-        "tags" : [ "vps" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "integer"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
         },
-        "operationId" : "doVpsRestart",
-        "summary" : "",
-        "description" : ""
-      }
-    },
-    "/vps/{id}/start" : {
-      "get" : {
-        "tags" : [ "vps" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "integer"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "doVpsStart",
-        "summary" : "",
-        "description" : ""
-      }
-    },
-    "/vps/{id}/stop" : {
-      "get" : {
-        "tags" : [ "vps" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "integer"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "doVpsStop",
-        "summary" : "",
-        "description" : ""
-      }
+        "in" : "path",
+        "required" : true
+      } ]
     },
     "/websites" : {
       "get" : {
@@ -1947,11 +1338,32 @@
       "get" : {
         "tags" : [ "webhosting" ],
         "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/WebsitesOrder"
+                }
+              }
+            },
+            "description" : "Website Ordering details"
+          },
           "default" : {
             "description" : "Default response"
           }
         },
         "operationId" : "getNewWebsite",
+        "summary" : "",
+        "description" : ""
+      },
+      "put" : {
+        "tags" : [ "websites" ],
+        "responses" : {
+          "200" : {
+            "description" : "Validate Website order response"
+          }
+        },
+        "operationId" : "putWebsites",
         "summary" : "",
         "description" : ""
       },
@@ -1963,48 +1375,6 @@
           }
         },
         "operationId" : "addWebsite",
-        "summary" : "",
-        "description" : ""
-      }
-    },
-    "/websites/{id}" : {
-      "get" : {
-        "tags" : [ "webhosting" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "integer"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "getWebsiteInfo",
-        "summary" : "",
-        "description" : ""
-      },
-      "post" : {
-        "tags" : [ "webhosting" ],
-        "parameters" : [ {
-          "name" : "id",
-          "description" : "The order ID number.",
-          "schema" : {
-            "type" : "string"
-          },
-          "in" : "path",
-          "required" : true
-        } ],
-        "responses" : {
-          "default" : {
-            "description" : "Default response"
-          }
-        },
-        "operationId" : "updateWebsiteInfo",
         "summary" : "",
         "description" : ""
       }
@@ -2203,7 +1573,25 @@
       }
     },
     "/dns/{id}/{recordId}" : {
+      "summary" : "DNS Record Management",
+      "description" : "Manage a DNS Record for the given Domain.",
       "post" : {
+        "requestBody" : {
+          "description" : "The request data to update a dns record.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/DnsUpdateRecord"
+              }
+            },
+            "multipart/form-data" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/DnsUpdateRecord"
+              }
+            }
+          },
+          "required" : true
+        },
         "tags" : [ "dns" ],
         "parameters" : [ {
           "name" : "recordId",
@@ -2228,8 +1616,8 @@
           }
         },
         "operationId" : "updateDnsRecord",
-        "summary" : "",
-        "description" : ""
+        "summary" : "Update DNS Record",
+        "description" : "Updates a DNS record with the supplied information."
       },
       "delete" : {
         "tags" : [ "dns" ],
@@ -2256,9 +1644,26 @@
           }
         },
         "operationId" : "deleteDnsRecord",
-        "summary" : "",
-        "description" : ""
-      }
+        "summary" : "Delete DNS Record",
+        "description" : "Removes a DNS Record from the specified domain."
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "The Domain ID number.",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      }, {
+        "name" : "recordId",
+        "description" : "The Record ID number for the given domain.",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
     },
     "/account/countries" : {
       "get" : {
@@ -2591,7 +1996,2908 @@
         "operationId" : "updateBackupInfo",
         "summary" : "",
         "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Backup ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/dns" : {
+      "summary" : "DNS Management",
+      "description" : "View and manage your DNS domains and records",
+      "get" : {
+        "tags" : [ "dns" ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/DnsListItem"
+                  }
+                },
+                "examples" : {
+                  "DnsListExample" : {
+                    "value" : [ {
+                      "id" : "68",
+                      "name" : "hussfamily.com",
+                      "content" : "64.20.35.186"
+                    }, {
+                      "id" : "1658",
+                      "name" : "detain.interserver.net",
+                      "content" : "66.45.228.74"
+                    }, {
+                      "id" : "1659",
+                      "name" : "creation.interserver.net",
+                      "content" : "66.23.239.99"
+                    } ]
+                  }
+                }
+              }
+            },
+            "description" : "Listing of Dns Domains setup"
+          },
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "getDnsList",
+        "summary" : "List of Domains on DNS Server",
+        "description" : "Gets a list of the domains currently configured on the DNS servers"
+      },
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/DnsNewDomain"
+              },
+              "examples" : {
+                "DnsNewDomainExampleJson" : {
+                  "value" : {
+                    "domain" : "mydomain.com",
+                    "ip" : "1.2.3.4"
+                  }
+                }
+              }
+            },
+            "multipart/form-data" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/DnsNewDomain"
+              },
+              "examples" : {
+                "DnsNewDomainExample" : {
+                  "value" : {
+                    "domain" : "mydomain.com",
+                    "ip" : "1.2.3.4"
+                  }
+                }
+              }
+            }
+          },
+          "required" : true
+        },
+        "tags" : [ "dns" ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "addDnsDomain",
+        "summary" : "",
+        "description" : ""
       }
+    },
+    "/vps/{id}/start" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "doVpsStart",
+        "summary" : "Start VPS",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/restart" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "VPS ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "doVpsRestart",
+        "summary" : "Restart VPS",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/stop" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "doVpsStop",
+        "summary" : "Stop VPS",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/block_smtp" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "VPS ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "doVpsBlockSmtp",
+        "summary" : "Blocks SMTP",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/disable_cd" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "VPS ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "doVpsDisableCd",
+        "summary" : "Disable CD Drive",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/disable_quota" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "VPS ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "doVpsDisableQuota",
+        "summary" : "Disable Quotas",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/eject_cd" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "VPS ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "doVpsEjectCd",
+        "summary" : "Eject CD Drive",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/enable_quota" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "VPS ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "doVpsEnableQuota",
+        "summary" : "Enable Quotas",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/websites/{id}" : {
+      "get" : {
+        "tags" : [ "webhosting" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Website"
+                }
+              }
+            },
+            "description" : "Website details"
+          },
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "getWebsiteInfo",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "webhosting" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "string"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "updateWebsiteInfo",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Website ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/ssl/{id}" : {
+      "get" : {
+        "tags" : [ "ssl" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "getSslInfo",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "ssl" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "string"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "updateSslInfo",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "SSL Cert ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/servers/{id}" : {
+      "get" : {
+        "tags" : [ "servers" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Server"
+                }
+              }
+            },
+            "description" : "Server details"
+          },
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "getServerInfo",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "servers" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "string"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "updateServerInfo",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Server ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Quickserver"
+                }
+              }
+            },
+            "description" : "Quickserver details"
+          },
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "getQsInfo",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "quickservers" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "string"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "updateQsInfo",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/mail/{id}" : {
+      "get" : {
+        "tags" : [ "mail" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MailSchema"
+                }
+              }
+            },
+            "description" : "Mail Information."
+          },
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "getMailInfo",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "mail" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "string"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "updateMailInfo",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Mail ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/licenses/{id}" : {
+      "get" : {
+        "tags" : [ "licenses" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/License"
+                }
+              }
+            },
+            "description" : "License information."
+          },
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "getLicenseInfo",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "licenses" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "string"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "updateLicenseInfo",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "License ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/domains/{id}" : {
+      "get" : {
+        "tags" : [ "domains" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Domain"
+                }
+              }
+            },
+            "description" : "Domain Information."
+          },
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "getDomainInfo",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "domains" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "string"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "updateDomainInfo",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Domain ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/account/creditcards/{id}" : {
+      "post" : {
+        "tags" : [ "account", "billing" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "updateAccountCreditCard",
+        "summary" : "",
+        "description" : ""
+      },
+      "delete" : {
+        "tags" : [ "account", "billing" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "string"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "deleteAccountCreditCard",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "CreditCard ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/floating_ips" : {
+      "get" : {
+        "tags" : [ "floating_ips" ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : { }
+            },
+            "description" : "The listing of `Floating IPs` services on your account."
+          },
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "getFloatingIpsList",
+        "summary" : "",
+        "description" : ""
+      }
+    },
+    "/floating_ips/{id}" : {
+      "get" : {
+        "tags" : [ "floating_ips" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "getFloatingIpInfo",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "floating_ips" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "string"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "updateFloatingIpInfo",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Floating IPs ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/floating_ips/order" : {
+      "get" : {
+        "tags" : [ "floating_ips" ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "getNewFloatingIp",
+        "summary" : "",
+        "description" : ""
+      },
+      "put" : {
+        "tags" : [ "floating_ips" ],
+        "responses" : {
+          "200" : {
+            "description" : "Validate Floating IPs order response"
+          }
+        },
+        "operationId" : "putFloating_ips",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "floating_ips" ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "addFloatingIp",
+        "summary" : "",
+        "description" : ""
+      }
+    },
+    "/account/oauth/{name}" : {
+      "delete" : {
+        "tags" : [ "account" ],
+        "responses" : {
+          "200" : {
+            "description" : "Delete Account OAuth response"
+          }
+        },
+        "operationId" : "deleteAccountOauthName",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "name",
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/account/oauth/{name}/logout" : {
+      "get" : {
+        "tags" : [ "account" ],
+        "responses" : {
+          "default" : {
+            "description" : "Default response"
+          }
+        },
+        "operationId" : "logoutAccountOauth",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "name",
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/view_desktop" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "Get VPS View Desktop Information"
+          }
+        },
+        "operationId" : "getVpsViewDesktop",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "Submit VPS View Desktop Information"
+          }
+        },
+        "operationId" : "postVpsViewDesktop",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/traffic_usage" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "Get VPS Traffic usage"
+          }
+        },
+        "operationId" : "getVpsTrafficUsage",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "Submit VPS Traffic Usage"
+          }
+        },
+        "operationId" : "postVpsTrafficUsage",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/slices" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "VPS Slices information"
+          }
+        },
+        "operationId" : "getVpsSlices",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "Update VPS slices response"
+          }
+        },
+        "operationId" : "postVpsSlices",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/setup_vnc" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "Get VPS Setup VNC Information"
+          }
+        },
+        "operationId" : "getVpsSetupVnc",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postVpsSetupVnc",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/reverse_dns" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ReverseDnsEntries"
+                }
+              }
+            },
+            "description" : "VPS Reverse DNS info response"
+          }
+        },
+        "operationId" : "getVpsReverseDns",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ReverseDnsEntries"
+              }
+            },
+            "multipart/form-data" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ReverseDnsEntries"
+              }
+            }
+          },
+          "required" : true
+        },
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "Update VPS Reverse DNS response"
+          }
+        },
+        "operationId" : "postVpsReverseDns",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/restore" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "Get VPS Restore info response"
+          }
+        },
+        "operationId" : "getVpsRestore",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/reset_password" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "VPS Reset password info"
+          }
+        },
+        "operationId" : "getVpsResetPassword",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postVpsResetPassword",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/reinstall_os" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/VpsTemplatesList"
+                }
+              }
+            },
+            "description" : "VPS Reinstall OS info response"
+          }
+        },
+        "operationId" : "getVpsReinstallOs",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postVpsReinstallOs",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/invoices" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "Get VPS Invoices response"
+          }
+        },
+        "operationId" : "getVpsInvoices",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/insert_cd" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "VPS Insert CD info response"
+          }
+        },
+        "operationId" : "getVpsInsertCd",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postVpsInsertCd",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/change_webuzo_password" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "VPS Change Webuzo Password info response"
+          }
+        },
+        "operationId" : "getVpsChangeWebuzoPassword",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postVpsChangeWebuzoPassword",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/change_timezone" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "string"
+                  }
+                },
+                "examples" : {
+                  "TimeZones" : {
+                    "value" : [ "America/New_York", "America/Nome", "America/Noronha", "America/North_Dakota/Beulah", "America/North_Dakota/Center" ]
+                  }
+                }
+              }
+            },
+            "description" : "VPS Change Timezone info response"
+          }
+        },
+        "operationId" : "getVpsChangeTimezone",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/TimezoneUpdate"
+              }
+            },
+            "multipart/form-data" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/TimezoneUpdate"
+              }
+            }
+          },
+          "required" : true
+        },
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postVpsChangeTimezone",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/change_root_password" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "VPS Change Root Password response"
+          }
+        },
+        "operationId" : "getVpsChangeRootPassword",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postVpsChangeRootPassword",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/change_hostname" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "VPS Change Hostname info response"
+          }
+        },
+        "operationId" : "getVpsChangeHostname",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postVpsChangeHostname",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/buy_ip" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "VPS Buy IP information"
+          }
+        },
+        "operationId" : "getVpsBuyIp",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "Submit VPS Buy IP form response"
+          }
+        },
+        "operationId" : "postVpsBuyIp",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/buy_hd_space" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "Get VPS Buy HD Space information"
+          }
+        },
+        "operationId" : "getVpsBuyHdSpace",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "description" : "Post Buy HD Space for VPS response"
+          }
+        },
+        "operationId" : "postVpsBuyHdSpace",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/account/username" : { },
+    "/affiliate" : { },
+    "/affiliate/banner/{id}" : {
+      "parameters" : [ {
+        "name" : "id",
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/affiliate/banners" : { },
+    "/affiliate/faq" : { },
+    "/affiliate/landing_pg" : { },
+    "/affiliate/payment_setup" : { },
+    "/affiliate/rich_report" : { },
+    "/affiliate/sales_graph" : { },
+    "/affiliate/sales_report" : { },
+    "/affiliate/status_legend" : { },
+    "/affiliate/tos" : { },
+    "/affiliate/traffic_graph" : { },
+    "/affiliate/web_traffic" : { },
+    "/domains/order/{domain}" : {
+      "parameters" : [ {
+        "name" : "domain",
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/domains/order/{domain}/{regType}" : {
+      "parameters" : [ {
+        "name" : "domain",
+        "in" : "path",
+        "required" : true
+      }, {
+        "name" : "regType",
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/licenses/order/{catTag}" : {
+      "parameters" : [ {
+        "name" : "catTag",
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/pay/{method}/{invoices}" : {
+      "parameters" : [ {
+        "name" : "method",
+        "in" : "path",
+        "required" : true
+      }, {
+        "name" : "invoices",
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/register" : { },
+    "/websites/{id}/welcome_email" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Website ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/websites/{id}/reverse_dns" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Website ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/websites/{id}/migration" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Website ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/websites/{id}/login" : {
+      "get" : {
+        "tags" : [ "websites" ],
+        "responses" : {
+          "200" : {
+            "description" : "Get Website Login response"
+          }
+        },
+        "operationId" : "getWebsitesLogin",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Website ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/websites/{id}/invoices" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Website ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/websites/{id}/download_backups" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Website ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/websites/{id}/cancel" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Website ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/websites/{id}/buy_ip" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Website ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/cancel" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/backups" : {
+      "get" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/VpsBackupRows"
+                }
+              }
+            },
+            "description" : "The listing of the available backups"
+          }
+        },
+        "operationId" : "getVpsBackups",
+        "summary" : "Get VPS Backups List",
+        "description" : "Gets a list of the available backups for your service over our backup systems such as XFS stsorag and Swift "
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/vps/{id}/backup" : {
+      "post" : {
+        "tags" : [ "vps" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postVpsBackup",
+        "summary" : "Start a VPS Backup",
+        "description" : "creates a backup of the vps which can be downloaded or restored."
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "VPS ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/ssl/{id}/welcome_email" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "SSL Cert ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/ssl/{id}/resend_approver_email" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "SSL Cert ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/ssl/{id}/invoices" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "SSL Cert ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/ssl/{id}/change_approver_email" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "SSL Cert ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/ssl/{id}/cancel" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "SSL Cert ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/servers/{id}/welcome_email" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Server ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/servers/{id}/reverse_dns" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Server ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/servers/{id}/ipmi_live" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Server ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/servers/{id}/invoices" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Server ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/servers/{id}/bandwidth_graph" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Server ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/servers/{id}/cancel" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Server ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/start" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "doQsStart",
+        "summary" : "Start QuickServer",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/restart" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "QuickServer ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "doQsRestart",
+        "summary" : "Restart QuickServer",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/stop" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "The order ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "doQsStop",
+        "summary" : "Stop QuickServer",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/block_smtp" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "QuickServer ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "doQsBlockSmtp",
+        "summary" : "Blocks SMTP",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/disable_cd" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "QuickServer ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "doQsDisableCd",
+        "summary" : "Disable CD Drive",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/disable_quota" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "QuickServer ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "doQsDisableQuota",
+        "summary" : "Disable Quotas",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/eject_cd" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "QuickServer ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "doQsEjectCd",
+        "summary" : "Eject CD Drive",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/enable_quota" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "parameters" : [ {
+          "name" : "id",
+          "description" : "QuickServer ID number.",
+          "schema" : {
+            "type" : "integer"
+          },
+          "in" : "path",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "doQsEnableQuota",
+        "summary" : "Enable Quotas",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/view_desktop" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "description" : "Get QuickServer View Desktop Information"
+          }
+        },
+        "operationId" : "getQsViewDesktop",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "description" : "Submit QuickServer View Desktop Information"
+          }
+        },
+        "operationId" : "postQsViewDesktop",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/traffic_usage" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "description" : "Get QuickServer Traffic usage"
+          }
+        },
+        "operationId" : "getQsTrafficUsage",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "description" : "Submit QuickServer Traffic Usage"
+          }
+        },
+        "operationId" : "postQsTrafficUsage",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/setup_vnc" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "description" : "Get QuickServer Setup VNC Information"
+          }
+        },
+        "operationId" : "getQsSetupVnc",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postQsSetupVnc",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/reverse_dns" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ReverseDnsEntries"
+                }
+              }
+            },
+            "description" : "QuickServer Reverse DNS info response"
+          }
+        },
+        "operationId" : "getQsReverseDns",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ReverseDnsEntries"
+              }
+            },
+            "multipart/form-data" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ReverseDnsEntries"
+              }
+            }
+          },
+          "required" : true
+        },
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "description" : "Update QuickServer Reverse DNS response"
+          }
+        },
+        "operationId" : "postQsReverseDns",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/restore" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "description" : "Get QuickServer Restore info response"
+          }
+        },
+        "operationId" : "getQsRestore",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/reset_password" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "description" : "QuickServer Reset password info"
+          }
+        },
+        "operationId" : "getQsResetPassword",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postQsResetPassword",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/invoices" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "description" : "Get QuickServer Invoices response"
+          }
+        },
+        "operationId" : "getQsInvoices",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/insert_cd" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "description" : "QuickServer Insert CD info response"
+          }
+        },
+        "operationId" : "getQsInsertCd",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postQsInsertCd",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/change_webuzo_password" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "description" : "QuickServer Change Webuzo Password info response"
+          }
+        },
+        "operationId" : "getQsChangeWebuzoPassword",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postQsChangeWebuzoPassword",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/change_timezone" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "string"
+                  }
+                },
+                "examples" : {
+                  "TimeZones" : {
+                    "value" : [ "America/New_York", "America/Nome", "America/Noronha", "America/North_Dakota/Beulah", "America/North_Dakota/Center" ]
+                  }
+                }
+              }
+            },
+            "description" : "QuickServer Change Timezone info response"
+          }
+        },
+        "operationId" : "getQsChangeTimezone",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/TimezoneUpdate"
+              }
+            },
+            "multipart/form-data" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/TimezoneUpdate"
+              }
+            }
+          },
+          "required" : true
+        },
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postQsChangeTimezone",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/change_root_password" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "description" : "QuickServer Change Root Password response"
+          }
+        },
+        "operationId" : "getQsChangeRootPassword",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postQsChangeRootPassword",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/change_hostname" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "description" : "QuickServer Change Hostname info response"
+          }
+        },
+        "operationId" : "getQsChangeHostname",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postQsChangeHostname",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/cancel" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/backups" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/backup" : {
+      "post" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postQsBackup",
+        "summary" : "Start a QuickServer Backup",
+        "description" : "creates a backup of the server which can be downloaded or restored."
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/mail/{id}/welcome_email" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Mail ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/mail/{id}/invoices" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Mail ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/mail/{id}/deny_rules" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Mail ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/mail/{id}/cancel" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Mail ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/mail/{id}/alerts" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Mail ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/licenses/{id}/welcome_email" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "License ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/licenses/{id}/invoices" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "License ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/licenses/{id}/change_os" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "License ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/licenses/{id}/change_ip" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "License ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/licenses/{id}/cancel" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "License ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/floating_ips/{id}/welcome_email" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Floating IPs ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/floating_ips/{id}/invoices" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Floating IPs ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/floating_ips/{id}/change_ip" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Floating IPs ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/floating_ips/{id}/cancel" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Floating IPs ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/domains/{id}/whois" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Domain ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/domains/{id}/welcome_email" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Domain ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/domains/{id}/transfer" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Domain ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/domains/{id}/renew" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Domain ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/domains/{id}/nameservers" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Domain ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/domains/{id}/invoices" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Domain ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/domains/{id}/dnssec" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Domain ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/domains/{id}/contact" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Domain ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/domains/{id}/cancel" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Domain ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/backups/{id}/welcome_email" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Backup ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/backups/{id}/cancel" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Backup ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/backups/{id}/invoices" : {
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "Backup ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
+    },
+    "/qs/{id}/reinstall_os" : {
+      "get" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/VpsTemplatesList"
+                }
+              }
+            },
+            "description" : "QuickServer Reinstall OS info response"
+          }
+        },
+        "operationId" : "getQsReinstallOs",
+        "summary" : "",
+        "description" : ""
+      },
+      "post" : {
+        "tags" : [ "quickservers" ],
+        "responses" : {
+          "200" : {
+            "$ref" : "#/components/responses/QueueResponse"
+          }
+        },
+        "operationId" : "postQsReinstallOs",
+        "summary" : "",
+        "description" : ""
+      },
+      "parameters" : [ {
+        "name" : "id",
+        "description" : "QuickServer ID number",
+        "schema" : {
+          "type" : "integer"
+        },
+        "in" : "path",
+        "required" : true
+      } ]
     }
   },
   "components" : {
@@ -2670,7 +4976,7 @@
             "format" : "date-time",
             "description" : "The expiration date of the domain.",
             "type" : "string",
-            "example" : "2023-08-14 00:59:38"
+            "example" : "2023-08-14T00:59:38.000Z"
           },
           "cost" : {
             "description" : "The cost of the domain.",
@@ -2686,7 +4992,7 @@
         "example" : {
           "domain_id" : "592337",
           "domain_hostname" : "mydomain.com",
-          "domain_expire_date" : "2023-08-14 00:59:38",
+          "domain_expire_date" : "2023-08-14T00:59:38.000Z",
           "cost" : "18.00",
           "domain_status" : "active"
         }
@@ -2877,7 +5183,7 @@
             "format" : "date-time",
             "description" : "The invoices date of the license.",
             "type" : "string",
-            "example" : "2019-08-28 14:27:22"
+            "example" : "2019-08-28T14:27:22.000Z"
           }
         },
         "example" : {
@@ -2888,7 +5194,7 @@
           "cost" : "25.00",
           "license_status" : "canceled",
           "invoices_paid" : "1",
-          "invoices_date" : "2019-08-28 14:27:22"
+          "invoices_date" : "2019-08-28T14:27:22.000Z"
         }
       },
       "WebsiteRow" : {
@@ -3814,8 +6120,7 @@
             "type" : "string"
           },
           "oauthproviders" : {
-            "type" : "array",
-            "items" : { }
+            "$ref" : "#/components/schemas/AccountInfoOauthConfigProviders"
           },
           "oauthconfig" : {
             "$ref" : "#/components/schemas/AccountInfoOauthConfig",
@@ -3894,7 +6199,9 @@
           },
           "oauthadapters" : {
             "type" : "array",
-            "items" : { }
+            "items" : {
+              "type" : "string"
+            }
           },
           "limits" : {
             "$ref" : "#/components/schemas/AccountInfoLimits"
@@ -4201,7 +6508,7 @@
             "2fa_google_qr" : "data:image/png;base64,zzz"
           },
           "ip" : "1.2.3.4",
-          "oauthproviders" : { },
+          "oauthproviders" : [ ],
           "oauthconfig" : {
             "callback" : "https://my.interserver.net/oauth/callback.php",
             "providers" : {
@@ -6354,7 +8661,7 @@
           "departmenttitle" : "Bugs",
           "ticketid" : 704185,
           "can_close" : "no",
-          "attachments" : { },
+          "attachments" : [ ],
           "status_text" : "Closed",
           "checked" : false
         }
@@ -6561,7 +8868,7 @@
           "vps_order_date" : {
             "description" : "Date of VPS order",
             "type" : "string",
-            "example" : "2022-12-26 20:14:59"
+            "example" : "2022-12-26T20:14:59.000Z"
           },
           "vps_status" : {
             "description" : "VPS status",
@@ -6696,7 +9003,7 @@
           "next_date" : {
             "description" : "Next billing date",
             "type" : "string",
-            "example" : "2023-08-26 09:41:12"
+            "example" : "2023-08-26T09:41:12.000Z"
           },
           "service_next_invoice_date" : {
             "description" : "Next invoice date",
@@ -6799,7 +9106,7 @@
           "vps_last_update" : {
             "description" : "Last update date",
             "type" : "string",
-            "example" : "2023-08-17 22:19:04"
+            "example" : "2023-08-17T22:19:04.000Z"
           },
           "vps_raid_building" : {
             "description" : "RAID building status",
@@ -7136,7 +9443,7 @@
           "website_order_date" : {
             "description" : "Order date of the website",
             "type" : "string",
-            "example" : "2023-03-16 22:51:54"
+            "example" : "2023-03-16T22:51:54.000Z"
           },
           "website_custid" : {
             "description" : "Customer ID of the website",
@@ -7314,7 +9621,7 @@
           "website_last_update" : {
             "description" : "Last update date for the service master",
             "type" : "string",
-            "example" : "2023-08-17 23:01:02"
+            "example" : "2023-08-17T23:01:02.000Z"
           },
           "website_max_sites" : {
             "description" : "Maximum number of sites for the service master",
@@ -7428,8 +9735,7 @@
         }
       },
       "BackupServiceExtra" : {
-        "type" : "array",
-        "items" : { }
+        "type" : "string"
       },
       "BackupServiceMaster" : {
         "type" : "object",
@@ -7467,7 +9773,7 @@
           "backup_last_update" : {
             "description" : "Last update timestamp of the backup service.",
             "type" : "string",
-            "example" : "2023-08-17 23:20:02"
+            "example" : "2023-08-17T23:20:02.000Z"
           },
           "backup_available" : {
             "description" : "Availability status of the backup service.",
@@ -7483,60 +9789,6 @@
             "description" : "Order associated with the backup service.",
             "type" : "string",
             "example" : 21359
-          }
-        }
-      },
-      "BackupBillingDetails" : {
-        "type" : "object",
-        "properties" : {
-          "service_last_invoice_date" : {
-            "description" : "Last invoice date of the service.",
-            "type" : "string",
-            "example" : "December 29, 2021"
-          },
-          "service_payment_status" : {
-            "description" : "Payment status of the service.",
-            "type" : "string",
-            "example" : "Paid"
-          },
-          "service_frequency" : {
-            "description" : "Billing frequency of the service.",
-            "type" : "string",
-            "example" : "Monthly"
-          },
-          "next_date" : {
-            "description" : "Next billing date of the service.",
-            "type" : "string",
-            "example" : "2022-01-29 14:09:57"
-          },
-          "service_next_invoice_date" : {
-            "description" : "Next invoice date of the service.",
-            "type" : "string",
-            "example" : "January 29, 2022"
-          },
-          "service_currency" : {
-            "description" : "Currency of the service.",
-            "type" : "string",
-            "example" : "USD"
-          },
-          "service_currency_symbol" : {
-            "description" : "Currency symbol of the service.",
-            "type" : "string",
-            "example" : "$"
-          },
-          "service_cost_info" : {
-            "description" : "Cost information of the service.",
-            "type" : "string",
-            "example" : 3
-          },
-          "service_extra" : {
-            "type" : "array",
-            "items" : { }
-          },
-          "service_extra_json" : {
-            "description" : "JSON representation of extra service information.",
-            "type" : "string",
-            "example" : "[]"
           }
         }
       },
@@ -7600,7 +9852,7 @@
           "backup_order_date" : {
             "description" : "Backup order date.",
             "type" : "string",
-            "example" : "2021-12-29 14:09:57"
+            "example" : "2021-12-29T14:09:57.000Z"
           },
           "backup_custid" : {
             "description" : "Backup customer ID.",
@@ -7716,11 +9968,10 @@
             "type" : "string"
           },
           "serviceExtra" : {
-            "$ref" : "#/components/schemas/DomainServiceExtra"
+            "$ref" : "#/components/schemas/DomainBillingExtra"
           },
           "extraInfoTables" : {
-            "type" : "array",
-            "items" : { }
+            "$ref" : "#/components/schemas/BackupExtraInfoTables"
           },
           "serviceType" : {
             "$ref" : "#/components/schemas/DomainServiceType"
@@ -7739,7 +9990,9 @@
           },
           "domain_logs" : {
             "type" : "array",
-            "items" : { }
+            "items" : {
+              "type" : "string"
+            }
           },
           "allInfo" : {
             "$ref" : "#/components/schemas/DomainAllInfo"
@@ -8337,7 +10590,7 @@
           "mail_order_date" : {
             "description" : "The order date of the mail service.",
             "type" : "string",
-            "example" : "2023-07-16 00:55:05"
+            "example" : "2023-07-16T00:55:05.000Z"
           },
           "mail_custid" : {
             "description" : "The customer ID associated with the mail service.",
@@ -8442,7 +10695,7 @@
           "next_date" : {
             "description" : "The next payment date of the service.",
             "type" : "string",
-            "example" : "2023-08-16 00:55:05"
+            "example" : "2023-08-16T00:55:05.000Z"
           },
           "service_next_invoice_date" : {
             "description" : "The next invoice date of the service.",
@@ -8743,7 +10996,7 @@
             "format" : "date-time",
             "description" : "License order date",
             "type" : "string",
-            "example" : "2020-01-14 10:48:14"
+            "example" : "2020-01-14T10:48:14.000Z"
           },
           "license_custid" : {
             "description" : "Customer ID",
@@ -8845,7 +11098,7 @@
             "format" : "date-time",
             "description" : "Next date",
             "type" : "string",
-            "example" : "2023-09-14 09:39:46"
+            "example" : "2023-09-14T09:39:46.000Z"
           },
           "service_next_invoice_date" : {
             "description" : "Next invoice date",
@@ -9257,222 +11510,6 @@
           }
         }
       },
-      "Home" : {
-        "required" : [ "last_login_ip", "last_login", "currency", "amount", "invoice_list", "balance", "full_name", "email", "tickets", "data", "ticketStatus", "ticketStatusView", "details", "services", "AFFILIATE_AMOUNT" ],
-        "type" : "object",
-        "properties" : {
-          "last_login_ip" : {
-            "description" : "Last login IP.",
-            "type" : "string",
-            "example" : "99.88.77.66"
-          },
-          "last_login" : {
-            "description" : "Last login time.",
-            "type" : "string",
-            "example" : "14:58:pm - 17 Aug, 2023"
-          },
-          "currency" : {
-            "description" : "Currency symbol.",
-            "type" : "string",
-            "example" : "$"
-          },
-          "amount" : {
-            "description" : "Amount with currency.",
-            "type" : "string",
-            "example" : "$23.50"
-          },
-          "invoice_list" : {
-            "description" : "Number of invoices.",
-            "type" : "integer",
-            "example" : 5
-          },
-          "balance" : {
-            "description" : "Balance with currency.",
-            "type" : "string",
-            "example" : "$0.60"
-          },
-          "full_name" : {
-            "description" : "User's full name.",
-            "type" : "string",
-            "example" : "John"
-          },
-          "email" : {
-            "description" : "User's email address.",
-            "type" : "string",
-            "example" : "user@domain.com"
-          },
-          "tickets" : {
-            "description" : "List of tickets.",
-            "type" : "array",
-            "items" : { }
-          },
-          "data" : {
-            "description" : "User-specific data.",
-            "type" : "object",
-            "example" : { }
-          },
-          "ticketStatus" : {
-            "description" : "Ticket statuses.",
-            "type" : "object",
-            "properties" : {
-              "Open" : {
-                "description" : "Count of open tickets.",
-                "type" : "integer",
-                "example" : 4
-              },
-              "On Hold" : {
-                "description" : "Count of tickets on hold.",
-                "type" : "integer",
-                "example" : 5
-              }
-            }
-          },
-          "ticketStatusView" : {
-            "description" : "Ticket statuses with view numbers.",
-            "type" : "object",
-            "properties" : {
-              "4" : {
-                "description" : "Status corresponding to view number 4.",
-                "type" : "string",
-                "example" : "Open"
-              },
-              "5" : {
-                "description" : "Status corresponding to view number 5.",
-                "type" : "string",
-                "example" : "On Hold"
-              },
-              "6" : {
-                "description" : "Status corresponding to view number 6.",
-                "type" : "string",
-                "example" : "Closed"
-              }
-            }
-          },
-          "details" : {
-            "description" : "User's details.",
-            "type" : "object",
-            "properties" : {
-              "modules" : {
-                "type" : "object",
-                "properties" : {
-                  "domains" : {
-                    "$ref" : "#/components/schemas/HomeDetailsModulesDomains"
-                  },
-                  "webhosting" : {
-                    "$ref" : "#/components/schemas/HomeDetailsModulesWebhosting"
-                  },
-                  "vps" : {
-                    "$ref" : "#/components/schemas/HomeDetailsModulesVps"
-                  },
-                  "licenses" : {
-                    "$ref" : "#/components/schemas/HomeDetailsModulesLicenses"
-                  },
-                  "backups" : {
-                    "$ref" : "#/components/schemas/HomeDetailsModulesBackups"
-                  },
-                  "servers" : {
-                    "$ref" : "#/components/schemas/HomeDetailsModulesServers"
-                  },
-                  "quickservers" : {
-                    "$ref" : "#/components/schemas/HomeDetailsModulesQuickservers"
-                  }
-                }
-              }
-            }
-          },
-          "services" : {
-            "description" : "User's services.",
-            "type" : "object",
-            "properties" : {
-              "domains" : {
-                "type" : "object",
-                "properties" : {
-                  "links" : {
-                    "$ref" : "#/components/schemas/HomeServicesDomainsLinks"
-                  },
-                  "count" : {
-                    "description" : "Number of domains.",
-                    "type" : "integer",
-                    "example" : 5
-                  }
-                }
-              },
-              "webhosting" : {
-                "type" : "object",
-                "properties" : {
-                  "links" : {
-                    "$ref" : "#/components/schemas/HomeServicesWebhostingLinks"
-                  },
-                  "count" : {
-                    "description" : "Number of web hosting services.",
-                    "type" : "integer",
-                    "example" : 8
-                  }
-                }
-              },
-              "vps" : {
-                "type" : "object",
-                "properties" : {
-                  "links" : {
-                    "$ref" : "#/components/schemas/HomeServicesVpsLinks"
-                  },
-                  "count" : {
-                    "description" : "Number of VPS services.",
-                    "type" : "integer",
-                    "example" : 20
-                  }
-                }
-              },
-              "licenses" : {
-                "type" : "object",
-                "properties" : {
-                  "links" : {
-                    "$ref" : "#/components/schemas/HomeServicesLicensesLinks"
-                  },
-                  "count" : {
-                    "description" : "Number of licenses.",
-                    "type" : "integer",
-                    "example" : 1
-                  }
-                }
-              },
-              "servers" : {
-                "type" : "object",
-                "properties" : {
-                  "links" : {
-                    "$ref" : "#/components/schemas/HomeServicesServersLinks"
-                  },
-                  "count" : {
-                    "description" : "Number of servers.",
-                    "type" : "integer",
-                    "example" : 1
-                  }
-                }
-              },
-              "backups" : {
-                "type" : "object",
-                "properties" : {
-                  "links" : {
-                    "description" : "List of backup links.",
-                    "type" : "array",
-                    "items" : { }
-                  },
-                  "count" : {
-                    "description" : "Number of backups.",
-                    "type" : "integer",
-                    "example" : 0
-                  }
-                }
-              }
-            }
-          },
-          "AFFILIATE_AMOUNT" : {
-            "description" : "Affiliate amount with currency.",
-            "type" : "string",
-            "example" : "100"
-          }
-        }
-      },
       "Quickserver" : {
         "required" : [ "serviceInfo", "client_links", "billingDetails", "custCurrency", "custCurrencySymbol", "serviceMaster", "package", "os_template", "serviceExtra", "extraInfoTables", "cpu_graph_data", "bandwidth_xaxis", "bandwidth_yaxis", "module", "token", "service_disk_used", "service_disk_total", "disk_percentage", "memory", "hdd", "service_overview_extra" ],
         "type" : "object",
@@ -9635,7 +11672,7 @@
           "qs_order_date" : {
             "description" : "Order date",
             "type" : "string",
-            "example" : "2023-04-11 20:00:06"
+            "example" : "2023-04-11T20:00:06.000Z"
           },
           "qs_status" : {
             "description" : "Status",
@@ -9770,7 +11807,7 @@
           "next_date" : {
             "description" : "Next date",
             "type" : "string",
-            "example" : "2023-05-11 20:00:06"
+            "example" : "2023-05-11T20:00:06.000Z"
           },
           "service_next_invoice_date" : {
             "description" : "Next invoice date",
@@ -9878,7 +11915,7 @@
           "qs_last_update" : {
             "description" : "Last update date",
             "type" : "string",
-            "example" : "2023-08-17 23:52:02"
+            "example" : "2023-08-17T23:52:02.000Z"
           },
           "qs_cores" : {
             "description" : "Number of cores",
@@ -10542,59 +12579,6 @@
           }
         }
       },
-      "ServerAssets" : {
-        "type" : "object",
-        "properties" : {
-          "title" : {
-            "description" : "The title of the assets.",
-            "type" : "string",
-            "example" : "Assets"
-          },
-          "size" : {
-            "description" : "The size of the assets.",
-            "type" : "integer",
-            "example" : 2
-          },
-          "type" : {
-            "description" : "The type of the assets.",
-            "type" : "string",
-            "example" : "table"
-          },
-          "header" : {
-            "description" : "The header of the assets table.",
-            "type" : "array",
-            "items" : {
-              "type" : "string"
-            }
-          },
-          "rows" : {
-            "description" : "The rows of the assets table.",
-            "type" : "array",
-            "items" : {
-              "type" : "array",
-              "items" : {
-                "type" : "string"
-              }
-            }
-          },
-          "required" : {
-            "0" : "title",
-            "1" : "size",
-            "2" : "type",
-            "3" : "header",
-            "4" : "rows"
-          }
-        },
-        "example" : {
-          "assets" : {
-            "title" : "Assets",
-            "size" : 2,
-            "type" : "table",
-            "header" : [ "Id", "Hostname", "Description", "Location Name", "Rack Name", "Status", "Primary Ipv4", "Comments" ],
-            "rows" : [ [ "3497", "myserver.host.com", "CPU:..............2x Intel Xeon E5-2620v4 @2.10GHz\r\nMemory:...........128GB DDR3 1600MHz\r\nHard Drive 1:.....Crucial 500 GB SSD\r\nHard Drive 2:.....Crucial 500 GB SSD\r\nRAID:.............none\r\nOS:...............Ubuntu 20\r\nControl Panel:....none\r\nNetwork...........10G Card\r\nIP(s):............Vlan 3497\r\nBandwidth:........10Tb @ 10gb port", "TEB2", "112.16", "active", "1.2.3.250", "" ] ]
-          }
-        }
-      },
       "ServerServiceInfo" : {
         "type" : "object",
         "properties" : {
@@ -10626,7 +12610,7 @@
           "server_order_date" : {
             "description" : "The date when the server was ordered.",
             "type" : "string",
-            "example" : "2020-05-08 17:22:36"
+            "example" : "2020-05-08T17:22:36.000Z"
           },
           "server_invoice" : {
             "description" : "The invoice number for the server.",
@@ -11095,18 +13079,15 @@
         }
       },
       "DomainOrder" : {
-        "required" : true,
         "type" : "object",
         "properties" : {
           "whoisPrivacyCost" : {
             "description" : "Cost of Whois Privacy",
-            "required" : true,
             "type" : "string",
             "example" : "5"
           },
           "services" : {
             "description" : "Available services",
-            "required" : true,
             "type" : "object",
             "properties" : {
               "DomainOrderServices10001" : {
@@ -11117,114 +13098,95 @@
         }
       },
       "DomainOrderServices10001" : {
-        "required" : true,
         "type" : "object",
         "properties" : {
           "services_id" : {
             "description" : "Service ID",
-            "required" : true,
             "type" : "string",
             "example" : "10001"
           },
           "services_name" : {
             "description" : "Service Name",
-            "required" : true,
             "type" : "string",
             "example" : ".asia Domain Name Registration"
           },
           "services_cost" : {
             "description" : "Service Cost",
-            "required" : true,
             "type" : "string",
             "example" : "19.00"
           },
           "services_currency" : {
             "description" : "Currency of Service Cost",
-            "required" : true,
             "type" : "string",
             "example" : "USD"
           },
           "services_category" : {
             "description" : "Service Category",
-            "required" : true,
             "type" : "string",
             "example" : "100"
           },
           "services_buyable" : {
             "description" : "Buyable flag for Service",
-            "required" : true,
             "type" : "string",
             "example" : "1"
           },
           "services_type" : {
             "description" : "Service Type",
-            "required" : true,
             "type" : "string",
             "example" : "100"
           },
           "services_field1" : {
             "description" : "Field 1 of Service",
-            "required" : true,
             "type" : "string",
             "example" : ".asia"
           },
           "services_field2" : {
             "description" : "Field 2 of Service",
-            "required" : true,
             "type" : "string",
             "example" : ""
           },
           "services_module" : {
             "description" : "Module of Service",
-            "required" : true,
             "type" : "string",
             "example" : "domains"
           },
           "services_hidden" : {
             "description" : "Hidden flag for Service",
-            "required" : true,
             "type" : "string",
             "example" : "0"
           }
         }
       },
       "DomainOrderTldServices" : {
-        "required" : true,
         "type" : "object",
         "properties" : {
           ".asia" : {
             "description" : "Service ID for .asia TLD",
-            "required" : true,
             "type" : "integer",
             "example" : 10001
           },
           ".be" : {
             "description" : "Service ID for .be TLD",
-            "required" : true,
             "type" : "integer",
             "example" : 10002
           },
           ".biz" : {
             "description" : "Service ID for .biz TLD",
-            "required" : true,
             "type" : "integer",
             "example" : 10003
           },
           ".ca" : {
             "description" : "Service ID for .ca TLD",
-            "required" : true,
             "type" : "integer",
             "example" : 10004
           }
         }
       },
       "MailOrder" : {
-        "required" : true,
         "type" : "object",
         "properties" : {
           "packageCosts" : {
             "description" : "Costs of mail packages",
-            "required" : true,
             "type" : "object",
             "properties" : {
               "MailOrderPackageCosts" : {
@@ -11234,7 +13196,6 @@
           },
           "serviceTypes" : {
             "description" : "Types of mail services",
-            "required" : true,
             "type" : "object",
             "properties" : {
               "MailOrderServiceTypes" : {
@@ -11246,21 +13207,17 @@
       },
       "MailOrderPackageCosts" : {
         "description" : "Mail package costs",
-        "required" : true,
         "type" : "object"
       },
       "MailOrderServiceTypes" : {
         "description" : "Mail service types",
-        "required" : true,
         "type" : "object"
       },
       "LicensesOrder" : {
-        "required" : true,
         "type" : "object",
         "properties" : {
           "serviceCategories" : {
             "description" : "License service categories",
-            "required" : true,
             "type" : "object",
             "properties" : {
               "LicensesOrderServiceCategories509" : {
@@ -11270,12 +13227,10 @@
           },
           "packageCosts" : {
             "description" : "Costs of license packages",
-            "required" : true,
             "type" : "object",
             "properties" : {
               "LicensesOrderPackageCosts11468" : {
                 "description" : "Cost of package with ID 11468",
-                "required" : true,
                 "type" : "number",
                 "example" : 3.75
               }
@@ -11283,7 +13238,6 @@
           },
           "serviceTypes" : {
             "description" : "Types of license services",
-            "required" : true,
             "type" : "object",
             "properties" : {
               "LicensesOrderServiceTypes11482" : {
@@ -11294,30 +13248,25 @@
         }
       },
       "LicensesOrderServiceCategories509" : {
-        "required" : true,
         "type" : "object",
         "properties" : {
           "category_id" : {
             "description" : "Category ID",
-            "required" : true,
             "type" : "string",
             "example" : "509"
           },
           "category_name" : {
             "description" : "Category Name",
-            "required" : true,
             "type" : "string",
             "example" : "Webuzo"
           },
           "category_tag" : {
             "description" : "Category Tag",
-            "required" : true,
             "type" : "string",
             "example" : "webuzo"
           },
           "category_module" : {
             "description" : "Category Module",
-            "required" : true,
             "type" : "string",
             "example" : "licenses"
           }
@@ -11325,72 +13274,61 @@
       },
       "LicensesOrderPackageCosts11468" : {
         "description" : "Cost of package with ID 11468",
-        "required" : true,
         "type" : "number",
         "example" : 3.75
       },
       "LicensesOrderServiceTypes11482" : {
-        "required" : true,
         "type" : "object",
         "properties" : {
           "services_id" : {
             "description" : "Service ID",
-            "required" : true,
             "type" : "string",
             "example" : "11482"
           },
           "services_name" : {
             "description" : "Service Name",
-            "required" : true,
             "type" : "string",
             "example" : "DirectAdmin Standard"
           },
           "services_cost" : {
             "description" : "Service Cost",
-            "required" : true,
             "type" : "string",
             "example" : "21.75"
           },
           "services_category" : {
             "description" : "Service Category",
-            "required" : true,
             "type" : "string",
             "example" : "506"
           },
           "services_buyable" : {
             "description" : "Buyable flag for Service",
-            "required" : true,
             "type" : "string",
             "example" : "1"
           },
           "services_type" : {
             "description" : "Service Type",
-            "required" : true,
             "type" : "string",
             "example" : "506"
           },
           "services_field1" : {
             "description" : "Field 1 of Service",
-            "required" : true,
             "type" : "string",
             "example" : "2704,Standard"
           },
           "services_field2" : {
             "description" : "Field 2 of Service",
-            "required" : true,
             "type" : "string",
             "example" : "Unlimited Accounts & Domains<br><br>The DirectAdmin standard license is best for medium to large shared-hosting and/or reseller-hosting companies. No limit on accounts or domains."
           },
           "services_module" : {
             "description" : "Module of Service",
-            "required" : true,
             "type" : "string",
             "example" : "licenses"
           }
         }
       },
       "BackupsOrderPackageCosts" : {
-        "required" : [ 11006 ],
+        "required" : [ "11006" ],
         "type" : "object",
         "properties" : {
           "11006" : {
@@ -11538,7 +13476,7 @@
           "created_at" : {
             "description" : "Creation date",
             "type" : "string",
-            "example" : "2023-01-25 14:50:55"
+            "example" : "2023-01-25T14:50:55.000Z"
           },
           "updated_at" : {
             "description" : "Update date",
@@ -11755,7 +13693,7 @@
           "created_at" : {
             "description" : "The creation timestamp of the service offer.",
             "type" : "string",
-            "example" : "2023-01-25 14:50:55"
+            "example" : "2023-01-25T14:50:55.000Z"
           },
           "updated_at" : {
             "description" : "The update timestamp of the service offer.",
@@ -11843,31 +13781,26 @@
         "properties" : {
           "cpu" : {
             "description" : "CPU details of the server.",
-            "required" : true,
             "type" : "string",
             "example" : "AMD Ryzen 9 5900X 12-Core Processor"
           },
           "ram" : {
             "description" : "RAM capacity of the server.",
-            "required" : true,
             "type" : "string",
             "example" : "119GB"
           },
           "hd" : {
             "description" : "Hard disk capacity of the server.",
-            "required" : true,
             "type" : "string",
             "example" : "1760GB"
           },
           "cores" : {
             "description" : "Number of CPU cores.",
-            "required" : true,
             "type" : "string",
             "example" : 24
           },
           "cost" : {
             "description" : "Cost of the server.",
-            "required" : true,
             "type" : "string",
             "example" : "$140.00"
           }
@@ -11875,13 +13808,11 @@
       },
       "QuickserverOrderTemplatesUbuntu64" : {
         "description" : "Ubuntu template details.",
-        "required" : true,
         "type" : "array",
         "items" : {
           "type" : "array",
           "items" : {
             "description" : "Name of the Ubuntu template.",
-            "required" : true,
             "type" : "string",
             "example" : "ubuntu-22.04"
           }
@@ -11892,7 +13823,6 @@
         "properties" : {
           "centosstream-8" : {
             "description" : "Version details of CentOS Stream 8.",
-            "required" : true,
             "type" : "string",
             "example" : "8 Stream (64 bits)"
           }
@@ -11903,25 +13833,21 @@
         "properties" : {
           "Ubuntu" : {
             "description" : "Selected distribution for Ubuntu.",
-            "required" : true,
             "type" : "string",
             "example" : "Ubuntu"
           }
         }
       },
       "QuickserverOrder" : {
-        "required" : true,
         "type" : "object",
         "properties" : {
           "qs_id" : {
             "description" : "Quickserver ID.",
-            "required" : true,
             "type" : "string",
             "example" : "221"
           },
           "server_details" : {
             "description" : "Server details.",
-            "required" : true,
             "type" : "object",
             "properties" : {
               "381" : {
@@ -11931,7 +13857,6 @@
           },
           "templates" : {
             "description" : "Templates details.",
-            "required" : true,
             "type" : "object",
             "properties" : {
               "Ubuntu" : {
@@ -11941,7 +13866,6 @@
           },
           "version" : {
             "description" : "Version details.",
-            "required" : true,
             "type" : "object",
             "properties" : {
               "centosstream-8" : {
@@ -11951,7 +13875,6 @@
           },
           "distro_sel" : {
             "description" : "Distribution selection.",
-            "required" : true,
             "type" : "object",
             "properties" : {
               "Ubuntu" : {
@@ -12638,6 +14561,598 @@
             "example" : "$50.00"
           }
         }
+      },
+      "ServerAssets" : {
+        "required" : [ "title", "size", "type", "header", "rows" ],
+        "type" : "object",
+        "properties" : {
+          "title" : {
+            "description" : "The title of the assets.",
+            "type" : "string",
+            "example" : "Assets"
+          },
+          "size" : {
+            "description" : "The size of the assets.",
+            "type" : "integer",
+            "example" : 2
+          },
+          "type" : {
+            "description" : "The type of the assets.",
+            "type" : "string",
+            "example" : "table"
+          },
+          "header" : {
+            "description" : "The header of the assets table.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "rows" : {
+            "description" : "The rows of the assets table.",
+            "type" : "array",
+            "items" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "example" : {
+          "assets" : {
+            "title" : "Assets",
+            "size" : 2,
+            "type" : "table",
+            "header" : [ "Id", "Hostname", "Description", "Location Name", "Rack Name", "Status", "Primary Ipv4", "Comments" ],
+            "rows" : [ [ "3497", "myserver.host.com", "CPU:..............2x Intel Xeon E5-2620v4 @2.10GHz\r\nMemory:...........128GB DDR3 1600MHz\r\nHard Drive 1:.....Crucial 500 GB SSD\r\nHard Drive 2:.....Crucial 500 GB SSD\r\nRAID:.............none\r\nOS:...............Ubuntu 20\r\nControl Panel:....none\r\nNetwork...........10G Card\r\nIP(s):............Vlan 3497\r\nBandwidth:........10Tb @ 10gb port", "TEB2", "112.16", "active", "1.2.3.250", "" ] ]
+          }
+        }
+      },
+      "CaptchaResponse" : {
+        "title" : "Root Type for CaptchaResponse",
+        "description" : "A base-64 encoded captcha image.",
+        "required" : [ "captcha" ],
+        "type" : "object",
+        "properties" : {
+          "captcha" : {
+            "description" : "The base64 encoded captcha image.",
+            "type" : "string",
+            "example" : "data:image/jpeg;base64,/9j/4AAQ"
+          }
+        },
+        "example" : {
+          "captcha" : "data:image/jpeg;base64,/9j/4AAQ"
+        }
+      },
+      "DnsNewDomain" : {
+        "title" : "Root Type for DnsNewDomain",
+        "description" : "The request for a new domain to be managed by the dns servers.",
+        "required" : [ "domain", "ip" ],
+        "type" : "object",
+        "properties" : {
+          "domain" : {
+            "description" : "The domain name.",
+            "type" : "string",
+            "example" : "mydomain.com"
+          },
+          "ip" : {
+            "description" : "IP Address to point the domain to.",
+            "type" : "string",
+            "example" : "1.2.3.4"
+          }
+        },
+        "example" : {
+          "domain" : "mydomain.com",
+          "ip" : "1.2.3.4"
+        }
+      },
+      "DnsUpdateRecord" : {
+        "title" : "Root Type for DnsUpdateRecord",
+        "description" : "The request data to update a dns record.",
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "content" : {
+            "type" : "string"
+          },
+          "ttl" : {
+            "type" : "string"
+          },
+          "prio" : {
+            "type" : "string"
+          },
+          "disabled" : {
+            "type" : "string"
+          },
+          "ordername" : {
+            "type" : "string"
+          },
+          "auth" : {
+            "type" : "string"
+          }
+        },
+        "example" : {
+          "name" : "mydomain.com",
+          "type" : "NS",
+          "content" : "cdns1.interserver.net",
+          "ttl" : "86400",
+          "prio" : "0",
+          "disabled" : "0",
+          "ordername" : "",
+          "auth" : "1"
+        }
+      },
+      "QueueResponse" : {
+        "title" : "Root Type for QueueResponse",
+        "description" : "Response after sending an action queue to a service.",
+        "required" : [ "queueId", "text" ],
+        "type" : "object",
+        "properties" : {
+          "text" : {
+            "description" : "Response text",
+            "type" : "string",
+            "example" : "Action has been sent to the server. Please allow up to 2 minutes for action to be completed."
+          },
+          "queueId" : {
+            "format" : "int32",
+            "description" : "The Queue ID attached to the action.",
+            "type" : "integer",
+            "example" : "14670065"
+          }
+        },
+        "example" : {
+          "text" : "Action has been sent to the server. Please allow up to 2 minutes for action to be completed.",
+          "queueId" : 14670065
+        }
+      },
+      "BackupBillingDetails" : {
+        "type" : "object",
+        "properties" : {
+          "service_last_invoice_date" : {
+            "description" : "Last invoice date of the service.",
+            "type" : "string",
+            "example" : "December 29, 2021"
+          },
+          "service_payment_status" : {
+            "description" : "Payment status of the service.",
+            "type" : "string",
+            "example" : "Paid"
+          },
+          "service_frequency" : {
+            "description" : "Billing frequency of the service.",
+            "type" : "string",
+            "example" : "Monthly"
+          },
+          "next_date" : {
+            "description" : "Next billing date of the service.",
+            "type" : "string",
+            "example" : "2022-01-29T14:09:57.000Z"
+          },
+          "service_next_invoice_date" : {
+            "description" : "Next invoice date of the service.",
+            "type" : "string",
+            "example" : "January 29, 2022"
+          },
+          "service_currency" : {
+            "description" : "Currency of the service.",
+            "type" : "string",
+            "example" : "USD"
+          },
+          "service_currency_symbol" : {
+            "description" : "Currency symbol of the service.",
+            "type" : "string",
+            "example" : "$"
+          },
+          "service_cost_info" : {
+            "description" : "Cost information of the service.",
+            "type" : "string",
+            "example" : "3"
+          },
+          "service_extra" : {
+            "description" : "Service Extra Info",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            },
+            "example" : "[]"
+          },
+          "service_extra_json" : {
+            "description" : "JSON representation of extra service information.",
+            "type" : "string",
+            "example" : "[]"
+          }
+        }
+      },
+      "Home" : {
+        "required" : [ "last_login_ip", "last_login", "currency", "amount", "invoice_list", "balance", "full_name", "email", "tickets", "data", "ticketStatus", "ticketStatusView", "details", "services", "AFFILIATE_AMOUNT" ],
+        "type" : "object",
+        "properties" : {
+          "last_login_ip" : {
+            "description" : "Last login IP.",
+            "type" : "string",
+            "example" : "99.88.77.66"
+          },
+          "last_login" : {
+            "description" : "Last login time.",
+            "type" : "string",
+            "example" : "14:58:pm - 17 Aug, 2023"
+          },
+          "currency" : {
+            "description" : "Currency symbol.",
+            "type" : "string",
+            "example" : "$"
+          },
+          "amount" : {
+            "description" : "Amount with currency.",
+            "type" : "string",
+            "example" : "$23.50"
+          },
+          "invoice_list" : {
+            "description" : "Number of invoices.",
+            "type" : "integer",
+            "example" : 5
+          },
+          "balance" : {
+            "description" : "Balance with currency.",
+            "type" : "string",
+            "example" : "$0.60"
+          },
+          "full_name" : {
+            "description" : "Users full name.",
+            "type" : "string",
+            "example" : "John"
+          },
+          "email" : {
+            "description" : "User email address.",
+            "type" : "string",
+            "example" : "user@domain.com"
+          },
+          "tickets" : {
+            "description" : "List of tickets.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "data" : {
+            "$ref" : "#/components/schemas/AccountInfo",
+            "description" : "User-specific data."
+          },
+          "ticketStatus" : {
+            "description" : "Ticket statuses.",
+            "type" : "object",
+            "properties" : {
+              "Open" : {
+                "description" : "Count of open tickets.",
+                "type" : "integer",
+                "example" : 4
+              },
+              "On Hold" : {
+                "description" : "Count of tickets on hold.",
+                "type" : "integer",
+                "example" : 5
+              }
+            }
+          },
+          "ticketStatusView" : {
+            "description" : "Ticket statuses with view numbers.",
+            "type" : "object",
+            "properties" : {
+              "4" : {
+                "description" : "Status corresponding to view number 4.",
+                "type" : "string",
+                "example" : "Open"
+              },
+              "5" : {
+                "description" : "Status corresponding to view number 5.",
+                "type" : "string",
+                "example" : "On Hold"
+              },
+              "6" : {
+                "description" : "Status corresponding to view number 6.",
+                "type" : "string",
+                "example" : "Closed"
+              }
+            }
+          },
+          "details" : {
+            "description" : "Users details.",
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            },
+            "properties" : {
+              "modules" : {
+                "type" : "object",
+                "properties" : {
+                  "domains" : {
+                    "$ref" : "#/components/schemas/HomeDetailsModulesDomains"
+                  },
+                  "webhosting" : {
+                    "$ref" : "#/components/schemas/HomeDetailsModulesWebhosting"
+                  },
+                  "vps" : {
+                    "$ref" : "#/components/schemas/HomeDetailsModulesVps"
+                  },
+                  "licenses" : {
+                    "$ref" : "#/components/schemas/HomeDetailsModulesLicenses"
+                  },
+                  "backups" : {
+                    "$ref" : "#/components/schemas/HomeDetailsModulesBackups"
+                  },
+                  "servers" : {
+                    "$ref" : "#/components/schemas/HomeDetailsModulesServers"
+                  },
+                  "quickservers" : {
+                    "$ref" : "#/components/schemas/HomeDetailsModulesQuickservers"
+                  }
+                }
+              }
+            }
+          },
+          "services" : {
+            "description" : "Users services.",
+            "type" : "object",
+            "properties" : {
+              "domains" : {
+                "type" : "object",
+                "properties" : {
+                  "links" : {
+                    "$ref" : "#/components/schemas/HomeServicesDomainsLinks"
+                  },
+                  "count" : {
+                    "description" : "Number of domains.",
+                    "type" : "integer",
+                    "example" : 5
+                  }
+                }
+              },
+              "webhosting" : {
+                "type" : "object",
+                "properties" : {
+                  "links" : {
+                    "$ref" : "#/components/schemas/HomeServicesWebhostingLinks"
+                  },
+                  "count" : {
+                    "description" : "Number of web hosting services.",
+                    "type" : "integer",
+                    "example" : 8
+                  }
+                }
+              },
+              "vps" : {
+                "type" : "object",
+                "properties" : {
+                  "links" : {
+                    "$ref" : "#/components/schemas/HomeServicesVpsLinks"
+                  },
+                  "count" : {
+                    "description" : "Number of VPS services.",
+                    "type" : "integer",
+                    "example" : 20
+                  }
+                }
+              },
+              "licenses" : {
+                "type" : "object",
+                "properties" : {
+                  "links" : {
+                    "$ref" : "#/components/schemas/HomeServicesLicensesLinks"
+                  },
+                  "count" : {
+                    "description" : "Number of licenses.",
+                    "type" : "integer",
+                    "example" : 1
+                  }
+                }
+              },
+              "servers" : {
+                "type" : "object",
+                "properties" : {
+                  "links" : {
+                    "$ref" : "#/components/schemas/HomeServicesServersLinks"
+                  },
+                  "count" : {
+                    "description" : "Number of servers.",
+                    "type" : "integer",
+                    "example" : 1
+                  }
+                }
+              },
+              "backups" : {
+                "type" : "object",
+                "properties" : {
+                  "links" : {
+                    "description" : "List of backup links.",
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string"
+                    }
+                  },
+                  "count" : {
+                    "description" : "Number of backups.",
+                    "type" : "integer",
+                    "example" : 0
+                  }
+                }
+              }
+            }
+          },
+          "AFFILIATE_AMOUNT" : {
+            "description" : "Affiliate amount with currency.",
+            "type" : "string",
+            "example" : "100"
+          }
+        }
+      },
+      "ReverseDnsEntries" : {
+        "title" : "Root Type for ReverseDnsEntries",
+        "description" : "The Reverse DNS entries.",
+        "type" : "object",
+        "properties" : {
+          "ips" : {
+            "description" : "The IPs you have access to and their current reverse dns mapping.",
+            "type" : "object",
+            "additionalProperties" : true
+          }
+        },
+        "example" : {
+          "ips" : {
+            "1.2.3.4" : "yourhost.com",
+            "1.2.3.5" : "anotherhost.com"
+          }
+        }
+      },
+      "VpsTemplateRow" : {
+        "title" : "Root Type for VpsTemplateRow",
+        "description" : "A VPS OS Template.",
+        "type" : "object",
+        "properties" : {
+          "template_id" : {
+            "type" : "string"
+          },
+          "template_type" : {
+            "type" : "string"
+          },
+          "template_os" : {
+            "type" : "string"
+          },
+          "template_version" : {
+            "type" : "string"
+          },
+          "template_bits" : {
+            "type" : "string"
+          },
+          "template_file" : {
+            "type" : "string"
+          },
+          "template_available" : {
+            "type" : "string"
+          },
+          "template_name" : {
+            "type" : "string"
+          },
+          "template_dir" : {
+            "type" : "string"
+          }
+        },
+        "example" : {
+          "template_id" : "1906",
+          "template_type" : "14",
+          "template_os" : "ubuntu",
+          "template_version" : "22.04",
+          "template_bits" : "64",
+          "template_file" : "ubuntu-22.04",
+          "template_available" : "1",
+          "template_name" : "Ubuntu",
+          "template_dir" : ""
+        }
+      },
+      "VpsTemplatesList" : {
+        "description" : "A listing of the OS Templates available for use.",
+        "required" : [ "templates" ],
+        "type" : "object",
+        "properties" : {
+          "templates" : {
+            "description" : "A listing of the templates.",
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/VpsTemplateRow"
+            }
+          }
+        }
+      },
+      "TimezoneUpdate" : {
+        "title" : "Root Type for TimezoneUpdate",
+        "description" : "The request to update the time zone of a vps.",
+        "required" : [ "timezone" ],
+        "type" : "object",
+        "properties" : {
+          "timezone" : {
+            "description" : "The time zone",
+            "type" : "string",
+            "example" : "America/New_York"
+          }
+        },
+        "example" : {
+          "timezone" : "America/New_York"
+        }
+      },
+      "VpsBackupRow" : {
+        "title" : "Root Type for VpsBackupRow",
+        "description" : "A single backed-up item and information about it.",
+        "required" : [ "type", "size", "date", "name", "service" ],
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "description" : "Backup Type",
+            "type" : "string",
+            "example" : "zfs"
+          },
+          "service" : {
+            "format" : "int32",
+            "description" : "The service id such as vps  id.",
+            "type" : "integer",
+            "example" : "12343"
+          },
+          "name" : {
+            "description" : "The name of the backup.",
+            "type" : "string",
+            "example" : "automated_backup"
+          },
+          "size" : {
+            "format" : "int32",
+            "description" : "Size of the file in bytes",
+            "type" : "integer",
+            "example" : "132412343124213"
+          },
+          "date" : {
+            "format" : "int32",
+            "description" : "The creation date of the backup in a unix timestamp.",
+            "type" : "integer",
+            "example" : "1693996140"
+          }
+        },
+        "example" : {
+          "type" : "zfs",
+          "service" : 242828,
+          "name" : "third",
+          "size" : 514850816,
+          "date" : 1693909500
+        }
+      },
+      "VpsBackupRows" : {
+        "title" : "Root Type for VpsBackupRows",
+        "description" : "The listing of the backups for your service.",
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/VpsBackupRow"
+        },
+        "example" : [ {
+          "type" : "zfs",
+          "service" : 2722890,
+          "name" : "first",
+          "size" : 3229615,
+          "date" : 1694082660
+        }, {
+          "type" : "swift",
+          "service" : 100,
+          "name" : "reset_shot_vps100_20210928.jpg",
+          "size" : 40621,
+          "date" : 1632842251
+        }, {
+          "type" : "swift",
+          "service" : 100,
+          "name" : "reset_shot_vps100_20210929.jpg",
+          "size" : 36319,
+          "date" : 1632968243
+        } ]
       }
     },
     "responses" : {
@@ -12716,6 +15231,16 @@
           }
         },
         "description" : "Unauthorized"
+      },
+      "QueueResponse" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/QueueResponse"
+            }
+          }
+        },
+        "description" : "Response message from sending a service queue."
       }
     },
     "parameters" : {
@@ -12774,6 +15299,9 @@
     "sessionIdCookieAuth" : [ ]
   } ],
   "tags" : [ {
+    "name" : "public",
+    "description" : "Commands usable without an active session or api credentials."
+  }, {
     "name" : "account",
     "description" : "Account related items"
   }, {
@@ -12783,11 +15311,20 @@
     "name" : "backups",
     "description" : "Backup related services"
   }, {
+    "name" : "dns",
+    "description" : "DNS related items"
+  }, {
     "name" : "domains",
     "description" : "Domain Registration related services"
   }, {
+    "name" : "floating_ips",
+    "description" : "Floating IP related items"
+  }, {
     "name" : "licenses",
     "description" : "Licensing related services"
+  }, {
+    "name" : "mail",
+    "description" : "Mail related items"
   }, {
     "name" : "quickservers",
     "description" : "Rapid Deploy Servers related services"
@@ -12803,18 +15340,6 @@
   }, {
     "name" : "webhosting",
     "description" : "Webhosting related services"
-  }, {
-    "name" : "floating_ips",
-    "description" : "Floating IP related items"
-  }, {
-    "name" : "mail",
-    "description" : "Mail related items"
-  }, {
-    "name" : "dns",
-    "description" : "DNS related items"
-  }, {
-    "name" : "public",
-    "description" : "Commands usable without an active session or api credentials."
   } ],
   "externalDocs" : {
     "description" : "Tips",
